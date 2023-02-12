@@ -1,0 +1,58 @@
+body {
+	background-color: lightskyblue;
+}
+
+.btn {
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+.pKiri,
+.pKanan {
+	opacity: 1;
+	transform: translate(-200px, 0) scale(0);
+	transition: .5s;
+}
+
+.pKanan {
+	transform: translate(250px, 0) scale(0);
+}
+
+.pKiri.pMuncul,
+.pKanan.pMuncul {
+	opacity: 1;
+	transform: translate(0, 0) scale(1);
+}
+
+
+.qKiri,
+.qKanan {
+	opacity: 1;
+	transform: translate(250px, 0) scale(0);
+	transition: .5s;
+}
+
+.qKanan {
+	transform: translate(-200px, 0) scale(0);
+}
+
+.qKiri.qMuncul,
+.qKanan.qMuncul {
+	opacity: 1;
+	transform: translate(0, 0) scale(1);
+}
+
+section {
+	padding-top: 100px;
+}
+
+div .row .login {
+	width: 100%;
+}
+
+.bi {
+	color: grey;
+}
