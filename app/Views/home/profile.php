@@ -1,4 +1,4 @@
-<?= $this->extend('../layout/template'); ?>
+<?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
 <!-- profil -->
@@ -10,7 +10,7 @@
                     <div class="row user-detail ">
                         <div class="col-lg-12 col-sm-12 col-12">
                             <label for="fileinput">
-                                <img src="profile.png" class="img-thumbnail rounded-circle" alt="profile">
+                                <img src="<?= base_url('assets/img/profile.png'); ?>" class="img-thumbnail rounded-circle" alt="profile">
                                 <input type="file" name="" accept="image" id="fileinput">
                             </label>
                             <h5>ini nama</h5>

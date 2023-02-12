@@ -7,7 +7,8 @@ class Auth extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'Navbar'
+            'section' => 'auth',
+            'title' => 'auth'
         ];
 
         return view('auth', $data);

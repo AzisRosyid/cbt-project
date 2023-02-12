@@ -7,14 +7,14 @@
     <title><?= isset($title) ? $title : 'CBT Project' ?></title>
 
     <!-- CSS -->
-    <<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
     <!-- CSS Local -->
     <?php if($section == 'auth') : ?>
-        <link rel="stylesheet" type="text/css" href="assets/css/style-auth.css">
+        <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/style-auth.css'); ?>">
     <?php elseif($section == 'home') : ?>
-        <link rel="stylesheet" type="text/css" href="assets/css/style-home.css">
+        <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/style-home.css'); ?>">
     <?php endif; ?>
 </head>
 <body>
@@ -30,9 +30,9 @@
 
     <!-- JS Local -->
     <?php if($section == 'auth') : ?>
-        <script type="text/javascript" src="assets/js/script-auth.js"></script>
+        <script type="text/javascript" src="<?= base_url('assets/js/script-auth.js'); ?>"></script>
     <?php elseif($section == 'home') : ?>
-        <script type="text/javascript" src="assets/js/script-home.js"></script>
+        <script type="text/javascript" src="<?= base_url('assets/js/script-home.js'); ?>"></script>
     <?php endif; ?>
 </body>
 </html>
