@@ -34,9 +34,17 @@ $routes->set404Override();
 $routes->get('/', 'Auth::index');
 
 // Home
-$routes->get('/home/test', 'Home::test');
-$routes->get('/home/result', 'Home::result');
-$routes->get('/home/profile', 'Home::profile');
+$routes->get('/home/test', 'Home::test', ['filter' => 'authGuard']);
+$routes->get('/home/result', 'Home::result', ['filter' => 'authGuard']);
+$routes->get('/home/profile', 'Home::profile', ['filter' => 'authGuard']);
+
+$routes->get('/', 'Auth::index');
+// $routes->get('/login', 'Auth::index');
+$routes->post('/login', 'Auth::login');
+$routes->post('/register', 'Auth::register');
+// $routes->match(['get', 'post'], 'Auth/register', 'Auth::register');
+// $routes->match(['get', 'post'], 'Auth/login', 'Auth::login');
+$routes->get('/profile', 'ProfileController::index',['filter' => 'authGuard']);
 
 /*
  * --------------------------------------------------------------------

@@ -11,15 +11,15 @@
       <div class="col-md-5 col-lg-4">
         <div class="card rounded-4 shadow pKiri pMuncul">
           <div class="card-body">
-            <form>
+            <form action="/login" method="post">
               <div class="input-group flex-nowrap col-lg-12 mb-4">
                 <span class="input-group-text" id="addon-wrapping"><i class="bi bi-person-fill"></i></span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" autofocus="" required="">
+                <input type="text" class="form-control" placeholder="Username" name="username" aria-label="Username" aria-describedby="addon-wrapping" autofocus="" required="">
               </div>
 
               <div class="input-group flex-nowrap col-lg-12 mb-4">
                 <span class="input-group-text" id="addon-wrapping"><i class="bi bi-lock-fill"></i></span>
-                <input type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="addon-wrapping" required="" minlength="8">
+                <input type="text" class="form-control" placeholder="Password" name="password" aria-label="Username" aria-describedby="addon-wrapping" required="" minlength="8">
               </div>
 
               <div class="form-group col-lg-12 mx-auto mb-0">
@@ -77,20 +77,20 @@
         <div class="card rounded-4 shadow qKanan">
           <div class="card-body">
 
-            <form>
+            <form action="/register" method="post">
               <div class="input-group flex-nowrap col-lg-12 mb-4">
                 <span class="input-group-text" id="addon-wrapping"><i class="bi bi-person-fill"></i></span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" required="" autofocus="">
+                <input type="text" class="form-control" placeholder="Username" name="username" aria-label="Username" aria-describedby="addon-wrapping" required="" autofocus="">
               </div>
 
               <div class="input-group flex-nowrap col-lg-12 mb-4">
                 <span class="input-group-text" id="addon-wrapping"><i class="bi bi-lock-fill"></i></span>
-                <input type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping" required="" autofocus="" minlength="8">
+                <input type="text" class="form-control" placeholder="Password" name="password" aria-label="Password" aria-describedby="addon-wrapping" required="" autofocus="" minlength="8">
               </div>
 
               <div class="input-group flex-nowrap col-lg-12 mb-4">
                 <span class="input-group-text" id="addon-wrapping"><i class="bi bi-person-circle"></i></span>
-                <input type="text" class="form-control" placeholder="Nama Lengkap" aria-label="Nama" aria-describedby="addon-wrapping" required="" autofocus="">
+                <input type="text" class="form-control" placeholder="Nama Lengkap" name="name" aria-label="Nama" aria-describedby="addon-wrapping" required="" autofocus="">
               </div>
 
               <div class="form-group col-lg-12 mx-auto mb-0">
