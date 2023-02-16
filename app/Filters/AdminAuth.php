@@ -12,7 +12,7 @@ class AdminAuth implements FilterInterface
     {
         if (session()->get('level') == 'Admin')
         {
-            return redirect()->to(base_url());
+            return redirect()->back();
         }
     }
     

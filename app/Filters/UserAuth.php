@@ -12,7 +12,7 @@ class UserAuth implements FilterInterface
     {
         if (!session()->get('level'))
         {
-            return redirect()->to(base_url());
+            return redirect()->back();
         }
     }
     

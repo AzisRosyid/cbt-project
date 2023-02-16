@@ -1,0 +1,435 @@
+body {
+	/*background-color: purple;*/
+}
+
+.navbar {
+	width: 100%;
+	z-index: 999;
+}
+
+.tombol {
+	background-color: white;
+	font-weight: 700;
+	text-align: center;
+	font-size: 30px;
+	border-radius: 15px;
+	text-decoration: underline;
+	margin-right: 15px;
+	box-shadow: 1px 1px 5px black;
+}
+
+.home {
+	overflow: hidden;
+}
+
+.home h1 {
+	font-size: 35px;
+	font-weight: 700;
+	margin-bottom: 90px;
+	margin-top: 50px;
+}
+
+.home h2 {
+	font-size: 100px;
+	font-weight: 800;
+}
+
+.textj {
+	margin-top: -35px;
+}
+
+.haljudul {
+	height: 620px;
+	position: absolute;
+	padding-top: 150px;
+	padding-left: 60px;
+	background-color: rgba(0, 0, 0, 0);
+	overflow: hidden;
+}
+
+.hias {
+	height: 740px;
+	overflow: hidden;
+	position: relative;
+	background-image: url('../img/home.jpg');
+	background-size: cover;
+}
+
+.elemen {
+	width: 1000px;
+	height: 2000px;
+	background-color: #133055;
+	margin-top: -300px;
+	margin-left: -250px;
+	transform: rotate(-30deg);
+}
+
+.eleme {
+	width: 1000px;
+	height: 2000px;
+	background-color: #1a4072;
+	margin-top: -2000px;
+	margin-left: -380px;
+	transform: rotate(-30deg);
+}
+
+.dot1 {
+	height: 25px;
+	width: 25px;
+	background-color: rgba(0, 0, 0, .0);
+	position: relative;
+	z-index: 3;
+	border: 5px white solid;
+	border-radius: 50%;
+	float: left;
+	margin-left: 17px;
+	margin-top: 100px;
+}
+
+.wadah {
+	position: absolute;
+	margin-left: 100px;
+}
+
+.wadah1 {
+	position: absolute;
+	right: 100px;
+	bottom: 100px;
+}
+
+.judul1 {
+	height: 670px;
+	position: absolute;
+	padding-top: 8px;
+	background-color: rgba(0, 0, 0, 0);
+	left: 0;
+}
+
+.judul1 h1 {
+	font-size: 80px;
+	font-style: italic;
+	bottom: 0;
+	text-align: center;
+	color: #133055;
+}
+
+.elemen1 {
+	width: 1000px;
+	height: 110px;
+	background-color: #133055;
+	position: absolute;
+	top: 50px;
+	left: -500px;
+	border-radius: 20px;
+}
+
+.elemen-1 {
+	width: 1000px;
+	height: 110px;
+	background-color: #133055;
+	position: absolute;
+	top: 50px;
+	right: -500px;
+	border-radius: 20px;
+}
+
+.eleme1 {
+	width: 350px;
+	height: 140px;
+	background-color: #133055;
+	position: absolute;
+	bottom: 30px;
+	border-radius: 20px;
+	left: 49%;
+	margin-left: -160px;
+	bottom: 50px;
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	padding-top: 23px;
+}
+
+.profile2 {
+	left: 20%;
+}
+
+.profile3 {
+	left: 78%;
+}
+
+.eleme1-2 {
+	width: 300px;
+	height: 140px;
+	background-color: #133055;
+	position: absolute;
+	bottom: 30px;
+	border-radius: 20px;
+	left: 50%;
+	margin-left: -130px;
+}
+
+.slideAbout {
+	background-color: rgba(0, 0, 0, .0);
+	margin-top: -50px;
+	text-align: center;
+	padding-left: 160px;
+	padding-right: 160px;
+	position: relative;
+	transform: translate(0) scale(1);
+	transition: .5s;
+}
+
+.slideAbout h2 {
+	color: #133055;
+	font-size: 30px;
+}
+
+.slideAbout h3 {
+	color: black;
+	font-size: 25px;
+	font-weight: 400;
+}
+
+.nonhias {
+	height: 820px;
+	position: relative;
+	overflow: hidden;
+}
+
+.panahki {
+	position: absolute;
+	z-index: 10;
+	color: #133055 !important;
+	font-size: 100px;
+	top: 40%;
+	left: 0;
+}
+
+.panahka {
+	position: absolute;
+	z-index: 10;
+	color: #133055 !important;
+	font-size: 100px;
+	top: 40%;
+	right: 0;padding: 0;
+}
+
+.hilangki {
+	transform: translate(-500px) scale(0);
+}
+
+.hilangka {
+	transform: translate(500px) scale(0);
+}
+
+.panahHilang {
+	transform: scale(0);
+}
+
+.sub a {
+	background-color: #133055;
+	width: 150px;
+	font-weight: 600;
+	text-align: center;
+	margin-left: 37%;
+}
+
+.sub p {
+	font-size: 20px;
+	color: black;
+}
+
+.profile {
+	position: absolute;
+	color: #133055 !important;
+	font-size: 25px;
+	left: 280px;
+	bottom: 180px;
+	z-index: 20;
+	font-weight: bold;
+}
+
+.aprofile {
+	left: 46%;
+	bottom: 180px;
+	position: absolute;
+	z-index: 20;
+	color: #133055 !important;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.bprofile {
+	right: 17%;
+	bottom: 180px;
+	position: absolute;
+	z-index: 20;
+	color: #133055 !important;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.about1 span {
+	font-weight: 500;
+	font-style: italic;
+}
+
+.about2 .abot {
+	font-size: 20px;
+	font-style: italic;
+	font-weight: 500;
+}
+
+.hiasJudul {
+	height: 100%;
+	width: 100%;
+	background-color: #133055;
+	border-radius: 0 20px 20px 0;
+}
+
+.hiasJuduli {
+	height: 100%;
+	width: 100%;
+	background-color: #133055;
+	border-radius: 20px 0 0 20px;
+}
+
+.bchias {
+	height: 110px;
+}
+
+.sub {
+
+	height: 110px;
+}
+
+.textsub h2 {
+	font-size: 80px !important;
+	font-style: italic;
+	color: #133055;
+	font-weight: bold;
+	left: 38%;
+}
+
+.bgc {
+	background-color: #133055;
+	color: white;
+}
+
+.bgc p {
+	font-weight: bold;
+	font-size: 25px;
+}
+
+.bgc2 {
+	background-color: goldenrod;
+	width: 150px;
+}
+
+.bgc2 a {
+	color: white;
+	font-weight: bold;
+	font-size: 26px;
+}
+
+.colalamat h1 {
+	color: #133055 !important;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.alamat {
+	height: 140px;
+	background-color: #133055;
+	border-radius: 20px;
+	color: white;
+	font-size: 20px;
+}
+
+.subHilang {
+	transform: scale(0);
+
+}
+
+.esub {
+	transform: scale(1.0);
+	transition: .5s;
+}
+
+.rounded-circle {
+	width: 400px;
+	height: 400px;
+	margin-top: 180px;
+	margin-bottom: 180px;
+	background-color: rgba(0, 0, 0, .0);
+	color: white;
+	border: 4px solid white;
+	padding-top: 50px;
+}
+
+.rounded-circle h1 {
+	font-size: 65px;
+	font-weight: bold;
+}
+
+.rounded-circle p {
+	margin-top: 30px;
+	font-weight: bold;
+	font-size: 28px;
+}
+
+.guide {
+	background-color: #133055;
+}
+
+.langkah {
+	width: 100%;
+	margin-top: 70px;
+	padding-left: 150px;
+	padding-right: 150px;
+}
+
+.langkah h1 {
+	font-weight: bold;
+	font-size: 28px;
+	color: white;
+}
+
+.subLangkah {
+	color: #133055;
+	font-size: 28px;
+	font-weight: 350;
+}
+
+.lagkah2 {
+	width: 100%;
+	margin-top: 460px;
+	padding-left: 150px;
+	padding-right: 150px;
+}
+
+.lagkah2 {
+	font-weight: bold;
+	font-size: 28px;
+	color: white;
+}
+
+.lingkaran {
+	width: 25px;
+	height: 25px;
+	background-color: rgba(0, 0, 0, .0);
+	border-radius: 50%;
+	border: 5px #133055 solid;
+	float: left;
+	margin-left: 17px;
+}
+
+.com {
+	margin-left: 17px;
+	color: #133055;
+	font-style: italic;
+	font-weight: 480;
+	font-size: 25px;
+	line-height: 30px;
+}
+

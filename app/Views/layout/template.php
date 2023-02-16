@@ -12,12 +12,16 @@
 
     <!-- CSS Local -->
     <?php if($section == 'auth') : ?>
-        <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/style-auth.css'); ?>">
+        <?php if($title == 'login') : ?>
+            <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/login.css'); ?>">
+        <?php elseif($title == 'register') : ?>
+            <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/register.css'); ?>">
+        <?php endif; ?>
     <?php elseif($section == 'home') : ?>
-        <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/style-home.css'); ?>">
+        <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/home.css'); ?>">
     <?php endif; ?>
 </head>
-<body>
+<body id="home">
     <!-- Navbar -->
     <?= $this->include('layout/navbar'); ?>
 
@@ -30,9 +34,13 @@
 
     <!-- JS Local -->
     <?php if($section == 'auth') : ?>
-        <script type="text/javascript" src="<?= base_url('assets/js/script-auth.js'); ?>"></script>
+        <?php if($title == 'login') : ?>
+            <script type="text/javascript" src="<?= base_url('assets/js/login.js'); ?>"></script>
+        <?php elseif($title == 'register') : ?>
+            <script type="text/javascript" src="<?= base_url('assets/js/register.js'); ?>"></script>
+        <?php endif; ?>
     <?php elseif($section == 'home') : ?>
-        <script type="text/javascript" src="<?= base_url('assets/js/script-home.js'); ?>"></script>
+        <script type="text/javascript" src="<?= base_url('assets/js/home.js'); ?>"></script>
     <?php endif; ?>
 </body>
 </html>

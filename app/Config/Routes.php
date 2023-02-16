@@ -30,18 +30,22 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
-// Auth
-$routes->get('/', 'Auth::index', ['filter' => 'guestAuth']);
-
 // Home
-$routes->get('/home/test', 'Home::test', ['filter' => 'userAuth']);
+$routes->get('/', 'Home::index', ['filter' => 'guestAuth']);
+
+// Auth
+$routes->get('/login', 'Auth::loginIndex', ['filter' => 'guestAuth']);
+$routes->get('/register', 'Auth::registerIndex', ['filter' => 'guestAuth']);
+$routes->post('/login', 'Auth::login', ['filter' => 'guestAuth']);
+$routes->post('/register', 'Auth::register', ['filter' => 'guestAuth']);
+
+// Test
+$routes->get('/test', 'Home::test', ['filter' => 'userAuth']);
 $routes->get('/home/result', 'Home::result', ['filter' => 'userAuth']);
 $routes->get('/home/profile', 'Home::profile', ['filter' => 'userAuth']);
 
-$routes->get('/', 'Auth::index');
 // $routes->get('/login', 'Auth::index');
-$routes->post('/login', 'Auth::login');
-$routes->post('/register', 'Auth::register');
+
 // $routes->match(['get', 'post'], 'Auth/register', 'Auth::register');
 // $routes->match(['get', 'post'], 'Auth/login', 'Auth::login');
 // $routes->get('/profile', 'ProfileController::index',['filter' => 'authGuard']);
