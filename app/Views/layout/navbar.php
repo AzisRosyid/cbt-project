@@ -9,7 +9,7 @@
                     <a class="nav-link active tombol" aria-current="page" href="#home">Home</a>
                     <a class="nav-link active tombol" aria-current="page" href="#about">About</a>
                     <a class="nav-link active tombol" aria-current="page" href="#guide">Guide</a>
-                    <a class="nav-link active tombol" aria-current="page" href="#login">Login</a>
+                    <a class="nav-link active tombol" aria-current="page" href="<?= base_url('login'); ?>">Login</a>
                 </div>
             </div>
         </div>

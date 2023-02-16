@@ -36,7 +36,7 @@ class Auth extends BaseController
 
     public function login()
     {
-        dd($this->request->getPost());
+      //  dd($this->request->getPost());
         $session = session();
         $userModel = new UserModel();
         $nip_nisn = $this->request->getVar('nip_nisn');
@@ -56,11 +56,11 @@ class Auth extends BaseController
                 return redirect()->to(base_url('/test'));
             } else {
                 $session->setFlashdata('msg', 'Password is incorrect.');
-                return redirect()->to('/');
+                return redirect()->back();
             }
         } else {
             $session->setFlashdata('msg', 'Email does not exist.');
-            return redirect()->to('/');
+            return redirect()->back();
         }
     }
 
