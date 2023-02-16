@@ -38,7 +38,7 @@ class Auth extends BaseController
             if (v_pass($password, $pass)) {
                 $ses_data = [
                     'id' => $data['id'],
-                    'name' => $data['name'],
+                    'nama' => $data['nama'],
                     'isLoggedIn' => TRUE
                 ];
                 $session->set($ses_data);
