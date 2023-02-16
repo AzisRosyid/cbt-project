@@ -39,10 +39,10 @@ class Auth extends BaseController
                 $ses_data = [
                     'id' => $data['id'],
                     'nama' => $data['nama'],
-                    'isLoggedIn' => TRUE
+                    'level' => $data['level']
                 ];
                 $session->set($ses_data);
-                return redirect()->to('/home/test');
+                return redirect()->to(base_url('/home/test'));
             } else {
                 $session->setFlashdata('msg', 'Password is incorrect.');
                 return redirect()->to('/');

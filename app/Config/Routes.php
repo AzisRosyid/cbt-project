@@ -31,12 +31,12 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 
 // Auth
-$routes->get('/', 'Auth::index');
+$routes->get('/', 'Auth::index', ['filter' => 'guestAuth']);
 
 // Home
-$routes->get('/home/test', 'Home::test', ['filter' => 'authGuard']);
-$routes->get('/home/result', 'Home::result', ['filter' => 'authGuard']);
-$routes->get('/home/profile', 'Home::profile', ['filter' => 'authGuard']);
+$routes->get('/home/test', 'Home::test', ['filter' => 'userAuth']);
+$routes->get('/home/result', 'Home::result', ['filter' => 'userAuth']);
+$routes->get('/home/profile', 'Home::profile', ['filter' => 'userAuth']);
 
 $routes->get('/', 'Auth::index');
 // $routes->get('/login', 'Auth::index');
@@ -44,7 +44,7 @@ $routes->post('/login', 'Auth::login');
 $routes->post('/register', 'Auth::register');
 // $routes->match(['get', 'post'], 'Auth/register', 'Auth::register');
 // $routes->match(['get', 'post'], 'Auth/login', 'Auth::login');
-$routes->get('/profile', 'ProfileController::index',['filter' => 'authGuard']);
+// $routes->get('/profile', 'ProfileController::index',['filter' => 'authGuard']);
 
 /*
  * --------------------------------------------------------------------

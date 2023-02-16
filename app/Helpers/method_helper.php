@@ -6,3 +6,7 @@ function pass($password) {
 function v_pass($password, $hash) {
     return pass($password) == $hash;
 }
+
+function auth() {
+
+}
