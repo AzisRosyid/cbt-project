@@ -7,6 +7,38 @@ function v_pass($password, $hash) {
     return pass($password) == $hash;
 }
 
-function auth() {
+function dataHome() {
+    $data = [
+        'section' => 'home',
+        'title' => 'home'
+    ];
 
+    return $data;
+}
+
+function dataLogin() {
+    $data = [
+        'section' => 'auth',
+        'title' => 'login'
+    ];
+
+    return $data;
+}
+
+function dataRegister() {
+    $data = [
+        'section' => 'auth',
+        'title' => 'register'
+    ];
+
+    return $data;
+}
+
+function dataTest() {
+    $data = [
+        'section' => 'test',
+        'title' => 'test'
+    ];
+
+    return $data;
 }

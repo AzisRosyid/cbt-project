@@ -36,11 +36,12 @@ $routes->get('/', 'Home::index', ['filter' => 'guestAuth']);
 // Auth
 $routes->get('/login', 'Auth::loginIndex', ['filter' => 'guestAuth']);
 $routes->get('/register', 'Auth::registerIndex', ['filter' => 'guestAuth']);
+$routes->get('/logout', 'Auth::logout', ['filter' => 'userAuth']);
 $routes->post('/login', 'Auth::login', ['filter' => 'guestAuth']);
 $routes->post('/register', 'Auth::register', ['filter' => 'guestAuth']);
 
 // Test
-$routes->get('/test', 'Home::test', ['filter' => 'userAuth']);
+$routes->get('/test', 'Test::index', ['filter' => 'userAuth']);
 $routes->get('/home/result', 'Home::result', ['filter' => 'userAuth']);
 $routes->get('/home/profile', 'Home::profile', ['filter' => 'userAuth']);
 

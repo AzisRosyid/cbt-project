@@ -16,22 +16,12 @@ class Auth extends BaseController
 
     public function loginIndex()
     {
-        $data = [
-            'section' => 'auth',
-            'title' => 'login'
-        ];
-
-        return view('auth/login', $data);
+        return view('auth/login', dataLogin());
     }
 
     public function registerIndex()
     {
-        $data = [
-            'section' => 'auth',
-            'title' => 'register'
-        ];
-
-        return view('auth/register', $data);
+        return view('auth/register', dataRegister());
     }
 
     public function login()
@@ -99,6 +89,16 @@ class Auth extends BaseController
             $data['section'] = 'auth';
             $data['title'] = 'register';
             return view('auth/register', $data);
+        }
+    }
+
+    public function logout() {
+        // dd(session()->get('id'));
+        if (session()->get('id')) {
+            session()->destroy();
+            return redirect()->to(base_url('login'));
+        } else {
+            return redirect()->back();
         }
     }
 }
