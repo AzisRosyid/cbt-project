@@ -20,7 +20,5 @@ class UserModel extends Model
         'provinsi',
         'email',
         'tahu',
-        'no_telp',
-        'image'
     ];
 }

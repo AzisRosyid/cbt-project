@@ -32,10 +32,6 @@ class TestAnswers extends Migration
                 'type' => 'ENUM("a", "b", "c", "d", "e")',
                 'null' => true,
             ],
-            'is_filled' => [
-                'type'       => 'BOOLEAN',
-                'null'       => false
-            ],
             'is_submit' => [
                 'type'       => 'BOOLEAN',
                 'null'       => false
