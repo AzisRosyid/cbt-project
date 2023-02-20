@@ -1,0 +1,47 @@
+.bgbody {
+	background-color: #133055;
+}
+
+.date {
+	color: #133055;
+	background-color: white;
+}
+
+.icon {
+	font-size: 20px;
+}
+
+.icon:hover {
+	font-size: 20px;
+	background-color: lightgrey !important;
+}
+
+.icon:active {
+	font-size: 20px;
+	background-color: white !important;
+	color: #133055 !important;
+}
+
+.aicon {
+	text-decoration: none;
+}
+
+.card h5 {
+	color: #133055 !important;
+}
+
+.hilang {
+	transform: scale(0);
+}
+
+.biru {
+	background-color: blue !important;
+}
+
+.hijau {
+	background-color: green !important;
+}
+
+.orange {
+	background-color: orange !important;
+}
