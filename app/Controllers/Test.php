@@ -20,4 +20,13 @@ class Test extends BaseController
 
         return view('test/test', $data);
     }
+
+    public function introduction() {
+        $data = [
+            'section' => 'test',
+            'title' => 'introduction'
+        ];
+
+        return view('test/introduction', $data);
+    }
 }

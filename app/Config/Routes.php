@@ -41,6 +41,7 @@ $routes->post('/login', 'Auth::login', ['filter' => 'guestAuth']);
 $routes->post('/register', 'Auth::register', ['filter' => 'guestAuth']);
 
 // Test
+$routes->get('/test/introduction', 'Test::introduction', ['filter' => 'userAuth']);
 $routes->get('/test', 'Test::index', ['filter' => 'userAuth']);
 $routes->get('/home/result', 'Home::result', ['filter' => 'userAuth']);
 $routes->get('/home/profile', 'Home::profile', ['filter' => 'userAuth']);

@@ -19,6 +19,10 @@
         <?php endif; ?>
     <?php elseif($section == 'home') : ?>
         <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/home.css'); ?>">
+    <?php elseif($section == 'test') : ?>
+        <?php if($title == 'introduction') : ?>
+            <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/introduction.css'); ?>">
+        <?php endif; ?>
     <?php endif; ?>
 </head>
 <body id="home">
@@ -41,6 +45,10 @@
         <?php endif; ?>
     <?php elseif($section == 'home') : ?>
         <script type="text/javascript" src="<?= base_url('assets/js/home.js'); ?>"></script>
+    <?php elseif($section == 'test') : ?>
+        <?php if($title == 'introduction') : ?>
+            <script type="text/javascript" src="<?= base_url('assets/js/introduction.js'); ?>"></script>
+        <?php endif; ?>
     <?php endif; ?>
 </body>
 </html>

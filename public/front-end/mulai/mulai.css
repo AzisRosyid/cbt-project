@@ -1,0 +1,60 @@
+.gmatematika {
+	background-image: url(gambar1.jpg);
+	background-size: cover;
+}
+
+.rounded-circle {
+	height: 20px;
+	width: 20px;
+	float: left;
+	margin-right: 17px;
+	border: 5px white solid;
+	height: 30px;
+	margin-top: 17px;
+}
+
+.judul {
+
+}
+
+.paragraf {
+	font-size: 25px;
+}
+
+.bg {
+	background-color: #133055;
+}
+
+.bi {
+	font-size: 80px;
+	cursor: pointer;
+}
+
+.btn {
+	background-color: white;
+	color: #133055;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: underline;
+	font-size: 30px;
+	width: 200px;
+}
+
+.btn:hover {
+	background-color: lightgrey;
+	color: #133055;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: underline;
+	font-size: 30px;
+	width: 200px;
+}
+
+.page {
+	transform: scale(1.0);
+	transition: .5s;
+}
+
+.hilang {
+	transform: scale(0);
+}

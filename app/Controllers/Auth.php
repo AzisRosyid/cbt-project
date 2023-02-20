@@ -43,7 +43,7 @@ class Auth extends BaseController
                     'level' => $data['level']
                 ];
                 $session->set($ses_data);
-                return redirect()->to(base_url('/test'));
+                return redirect()->to(base_url('/test/introduction'));
             } else {
                 $session->setFlashdata('msg', 'Password is incorrect.');
                 return redirect()->back();
