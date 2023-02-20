@@ -37,10 +37,12 @@ class Auth extends BaseController
         if ($data) {
             $pass = $data['password'];
             if (v_pass($password, $pass)) {
+                
                 $ses_data = [
                     'id' => $data['id'],
                     'nama' => $data['nama'],
-                    'level' => $data['level']
+                    'level' => $data['level'],
+                    'status' => 'helo'
                 ];
                 $session->set($ses_data);
                 return redirect()->to(base_url('/test/introduction'));
