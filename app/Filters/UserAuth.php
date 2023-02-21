@@ -10,9 +10,11 @@ class UserAuth implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
+        helper('method');
+        onTest();
         if (!session()->get('level'))
         {
-            return redirect()->to(base_url());
+            return redirect()->back();
         }
     }
     

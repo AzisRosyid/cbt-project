@@ -4,33 +4,12 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    public function test()
-    {
+    public function index() {
         $data = [
             'section' => 'home',
-            'title' => 'test'
+            'title' => 'home'
         ];
 
-        return view('home/test', $data);
-    }
-
-    public function result()
-    {
-        $data = [
-            'section' => 'home',
-            'title' => 'test'
-        ];
-
-        return view('home/result', $data);
-    }
-
-    public function profile()
-    {
-        $data = [
-            'section' => 'home',
-            'title' => 'test'
-        ];
-
-        return view('home/profile', $data);
+        return view('home/home', $data);
     }
 }

@@ -11,9 +11,14 @@ class UserModel extends Model
     protected $useTimestamps = true;
 
     protected $allowedFields = [
-        'username',
+        'nip_nisn',
         'password',
         'nama',
-        'level'
+        'level',
+        'sebagai',
+        'sekolah',
+        'provinsi',
+        'email',
+        'tahu',
     ];
 }
