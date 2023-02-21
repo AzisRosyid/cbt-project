@@ -2,47 +2,63 @@
 
 namespace App\Controllers;
 
+use App\Models\TestModel;
 use App\Models\UserModel;
+use Exception;
 
 class Auth extends BaseController
 {
     protected $userModel;
+    protected $testModel;
 
     public function __construct()
     {
         $this->userModel = new UserModel();
+        $this->testModel = new TestModel();
         helper('method');
     }
 
     public function loginIndex()
     {
-        return view('auth/login', dataLogin());
+        $data = [
+            'section' => 'auth',
+            'title'   => 'login'
+        ];
+
+        return view('auth/login', $data);
     }
 
     public function registerIndex()
     {
-        return view('auth/register', dataRegister());
+        $data = [
+            'section' => 'auth',
+            'title'   => 'login'
+        ];
+
+        return view('auth/register', $data);
     }
 
     public function login()
     {
       //  dd($this->request->getPost());
         $session = session();
-        $userModel = new UserModel();
         $nip_nisn = $this->request->getVar('nip_nisn');
         $password = $this->request->getVar('password');
 
-        $data = $userModel->where('nip_nisn', $nip_nisn)->first();
+        $data = $this->userModel->where('nip_nisn', $nip_nisn)->first();
 
         if ($data) {
             $pass = $data['password'];
             if (v_pass($password, $pass)) {
-                
+                $status = 'none';
+                try {
+                    $status = $this->testModel->where('user_id', $data['id'])->orderBy("id", "desc")->first()['status'];
+                } catch (Exception $e) {}
                 $ses_data = [
                     'id' => $data['id'],
                     'nama' => $data['nama'],
                     'level' => $data['level'],
-                    'status' => 'helo'
+                    'status' => $status
                 ];
                 $session->set($ses_data);
                 return redirect()->to(base_url('/test/introduction'));

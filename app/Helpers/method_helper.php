@@ -1,44 +1,22 @@
-<?php 
-function pass($password) {
+<?php
+
+use App\Models\TestModel;
+
+function pass($password)
+{
     return hash('sha256', hash('sha256', $password));
 }
 
-function v_pass($password, $hash) {
+function v_pass($password, $hash)
+{
     return pass($password) == $hash;
 }
 
-function dataHome() {
-    $data = [
-        'section' => 'home',
-        'title' => 'home'
-    ];
-
-    return $data;
-}
-
-function dataLogin() {
-    $data = [
-        'section' => 'auth',
-        'title' => 'login'
-    ];
-
-    return $data;
-}
-
-function dataRegister() {
-    $data = [
-        'section' => 'auth',
-        'title' => 'register'
-    ];
-
-    return $data;
-}
-
-function dataTest() {
-    $data = [
-        'section' => 'test',
-        'title' => 'test'
-    ];
-
-    return $data;
+function onTest()
+{
+    if (session()->get('status') == "on_test") {
+        $testModel = new TestModel();
+        $url = pass($testModel->where('user_id', session()->get('id'))->orderBy("id", "desc")->first()['id']);
+        return redirect()->to(base_url('test/'.$url));
+    }
 }
