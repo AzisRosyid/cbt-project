@@ -86,7 +86,7 @@ class Test extends BaseController
         $this->testModel->save($data);
 
         dd($this->questionModel->countAll());
-        foreach ($this->questionModel->findAll() as $i=>$st) {
+        foreach ($this->questionModel->findAll() as $st) {
             $test = [
                 'test_id'   => getTestId(),
                 'question_id'   => $st['id'],
