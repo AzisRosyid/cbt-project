@@ -10,6 +10,8 @@ class TestAuth implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
+        helper('method');
+        r_session();
         if (session()->get('status') != "on_test")
             return redirect()->back();
     }

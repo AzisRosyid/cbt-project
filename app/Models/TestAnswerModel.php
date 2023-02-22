@@ -11,8 +11,9 @@ class TestAnswerModel extends Model
     protected $useTimestamps = true;
 
     protected $allowedFields = [
-        'content',
-        'type',
-        'category'
+        'test_id',
+        'question_id',
+        'answer',
+        'is_submit'
     ];
 }

@@ -27,3 +27,21 @@ function getQuestions()
     shuffle($questions);
     return $questions;
 }
+
+function r_session()
+{
+    if (session()->get('id') == null)
+        return;
+    $testModel = new TestModel();
+    $status = $testModel->where('user_id', session()->get('id'))->orderBy("id", "desc")->first()['status'];
+
+    $data = [
+        'id' => session()->get('id'),
+        'nama' => session()->get('nama'),
+        'level' => session()->get('level'),
+        'status' => $status
+    ];
+
+    session()->set($data);
+    return;
+}

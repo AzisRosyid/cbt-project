@@ -8,6 +8,8 @@ use App\Models\QuestionOptionModel;
 use App\Models\TestAnswerModel;
 use App\Models\TestModel;
 use App\Models\UserModel;
+use CodeIgniter\I18n\Time;
+use DateTime;
 
 class Test extends BaseController
 {
@@ -42,7 +44,7 @@ class Test extends BaseController
         $current = null;
         foreach ($questions as $i => $st) {
             $current = $i;
-            if ($this->testAnswerModel->where('test_id', getTestId())->where('question_id', $st['id'])->first() == null)
+            if ($this->testAnswerModel->where('test_id', getTestId())->where('question_id', $st['id'])->where('answer', !null)->where('is_submit', true)->first() == null)
                 break;
         }
         $test = $this->testModel->where('id', getTestId())->first();
@@ -60,7 +62,7 @@ class Test extends BaseController
             'current' => $current,
             'nama' => session()->get('nama'),
             'date'  => date('d-m-Y', strtotime($date)),
-            'time'  => date('H:i:s', $time),
+            'time'  => gmdate("i:s", $time),
         ];
 
         return view('test/test', $data);
@@ -78,56 +80,29 @@ class Test extends BaseController
 
     public function start()
     {
-        dd($this->questionModel->countAll());
         $data = [
-            'user_id'     => $this->request->getVar('nip_nisn'),
+            'user_id'     => session()->get('id'),
             'status'      => 'stand_by',
         ];
         $this->testModel->save($data);
 
-        dd($this->questionModel->countAll());
         foreach ($this->questionModel->findAll() as $st) {
+            
             $test = [
                 'test_id'   => getTestId(),
                 'question_id'   => $st['id'],
+                'is_submit' => false,
             ];
 
-            $this->questionModel->save($test);
+            $this->testAnswerModel->save($test);
         }
+
+        $time = Time::now('Asia/Jakarta', 'in_ID');
         
-        $session = session();
-        $userModel = new UserModel();
-        $nip_nisn = $this->request->getVar('nip_nisn');
-        $password = $this->request->getVar('password');
-
-        $data = $userModel->where('nip_nisn', $nip_nisn)->first();
-
-        if ($data) {
-            $pass = $data['password'];
-            if (v_pass($password, $pass)) {
-
-                $ses_data = [
-                    'id' => $data['id'],
-                    'nama' => $data['nama'],
-                    'level' => $data['level'],
-                    'status' => 'helo'
-                ];
-                $session->set($ses_data);
-                return redirect()->to(base_url('/test/introduction'));
-            } else {
-                $session->setFlashdata('msg', 'Password is incorrect.');
-                return redirect()->back();
-            }
-        } else {
-            $session->setFlashdata('msg', 'Email does not exist.');
-            return redirect()->back();
-        }
-
         $data = [
-            'user_id'     => $this->request->getVar('nip_nisn'),
-            'start_time'  => pass($this->request->getVar('password')),
-            'finish_time' => $this->request->getVar('nama'),
-            'end_time'    => $this->request->getVar('email'),
+            'id'          => getTestId(),
+            'start_time'  => $time,
+            'end_time'    => $time->addHours(1),
             'status'      => 'on_test',
         ];
         $this->testModel->save($data);
