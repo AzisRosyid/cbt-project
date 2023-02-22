@@ -73,13 +73,28 @@ class Test extends BaseController
             'title' => 'introduction'
         ];
 
-        return session()->get('status');
-
         return view('test/introduction', $data);
     }
 
     public function start()
     {
+        dd($this->questionModel->countAll());
+        $data = [
+            'user_id'     => $this->request->getVar('nip_nisn'),
+            'status'      => 'stand_by',
+        ];
+        $this->testModel->save($data);
+
+        dd($this->questionModel->countAll());
+        foreach ($this->questionModel->findAll() as $i=>$st) {
+            $test = [
+                'test_id'   => getTestId(),
+                'question_id'   => $st['id'],
+            ];
+
+            $this->questionModel->save($test);
+        }
+        
         $session = session();
         $userModel = new UserModel();
         $nip_nisn = $this->request->getVar('nip_nisn');

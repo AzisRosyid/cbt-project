@@ -64,7 +64,9 @@
               <a href="" class=" position-absolute panahki3 hilang"><i class="bi bi-caret-left-fill text-white"></i></a>
             </div>
             <div class="col-lg-2 pt-4 col-md-4">
-              <a href="#" class="btn rounded-5 hilang">MULAI TES</a>
+              <form action="<?= base_url('test/start'); ?>" method="post">
+                <input type="submit" href="<?= base_url('test/start'); ?>" class="btn rounded-5 hilang">MULAI TES</input>
+              </form>
             </div>
             <div class="col-lg-2 col-md-3 offset-lg-2 position-relative col-sm-6">
               <a href="#" class=" position-absolute panahka1"><i class="bi bi-caret-right-fill text-white"></i></a>

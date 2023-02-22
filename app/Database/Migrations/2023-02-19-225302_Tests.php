@@ -35,7 +35,7 @@ class Tests extends Migration
                 'null'       => true
             ],
             'status' => [
-                'type'       => 'ENUM("on_test", "finished")',
+                'type'       => 'ENUM("stand_by", "on_test", "finished")',
                 'null'       => false
             ],
             'created_at datetime default current_timestamp',

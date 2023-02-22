@@ -32,7 +32,7 @@ class Auth extends BaseController
     {
         $data = [
             'section' => 'auth',
-            'title'   => 'login'
+            'title'   => 'register'
         ];
 
         return view('auth/register', $data);
