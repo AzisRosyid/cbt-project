@@ -6,14 +6,11 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Filters\FilterInterface;
 
-class AdminAuth implements FilterInterface
+class TestAuth implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        helper('method');
-        if (session()->get('status') == "on_test")
-            return redirect()->to(base_url('test/' . pass(getTestId())));
-        if (session()->get('level') == 'Admin')
+        if (session()->get('status') != "on_test")
             return redirect()->back();
     }
 

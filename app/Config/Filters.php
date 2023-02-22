@@ -4,6 +4,7 @@ namespace Config;
 
 use App\Filters\AdminAuth;
 use App\Filters\GuestAuth;
+use App\Filters\TestAuth;
 use App\Filters\UserAuth;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
@@ -27,6 +28,7 @@ class Filters extends BaseConfig
         'userAuth'      => UserAuth::class,
         'adminAuth'     => AdminAuth::class,
         'guestAuth'     => GuestAuth::class,
+        'testAuth'      => TestAuth::class,
     ];
 
     /**

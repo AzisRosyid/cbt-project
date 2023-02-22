@@ -1,7 +1,7 @@
-<?php 
+<?php
+
 namespace App\Filters;
 
-use CodeIgniter\Database\BaseUtils;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Filters\FilterInterface;
@@ -11,15 +11,13 @@ class UserAuth implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         helper('method');
-        onTest();
+        if (session()->get('status') == "on_test")
+            return redirect()->to(base_url('test/'.pass(getTestId())));
         if (!session()->get('level'))
-        {
             return redirect()->back();
-        }
     }
-    
+
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        
     }
 }

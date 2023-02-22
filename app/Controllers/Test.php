@@ -2,37 +2,72 @@
 
 namespace App\Controllers;
 
+use App\Database\Migrations\TestAnswers;
+use App\Models\QuestionModel;
+use App\Models\QuestionOptionModel;
+use App\Models\TestAnswerModel;
 use App\Models\TestModel;
 use App\Models\UserModel;
 
 class Test extends BaseController
 {
-    protected $userModel, $testModel;
+    protected $userModel, $testModel, $questionModel, $questionOptionModel, $testAnswerModel;
 
-    public function __construct() {
-        $userModel = new UserModel();
-        $testModel = new TestModel();
+    public function __construct()
+    {
+        $this->userModel = new UserModel();
+        $this->questionModel = new QuestionModel();
+        $this->questionOptionModel = new QuestionOptionModel();
+        $this->testModel = new TestModel();
+        $this->testAnswerModel = new TestAnswerModel();
         helper('method');
     }
 
-    public function index() {
+    public function index($id)
+    {
+        if (!v_pass(getTestId(), $id))
+            return redirect()->back();
+
+        // $helo = [1, 3, 5, 9, 7, 8, 2, 4];
+
+        // srand(1234234);
+        // shuffle($helo);
+        // foreach ($helo as $st) {
+        //     echo $st;
+        // }
+
+        // return base_url('test/'.pass($testModel->where('user_id', session()->get('id'))->orderBy("id", "desc")->first()['id']));
+
+        $questions = getQuestions();
+        $current = null;
+        foreach ($questions as $i => $st) {
+            $current = $i;
+            if ($this->testAnswerModel->where('test_id', getTestId())->where('question_id', $st['id'])->first() == null)
+                break;
+        }
+        $test = $this->testModel->where('id', getTestId())->first();
+
+        //dd($questions);
+        date_default_timezone_set('Asia/Jakarta');
+        $date = date('d-m-Y H:i:s');
+        // date('d-m-Y H:i:s', strtotime("+1 hour"));
+        $time = strtotime($test['end_time']) - strtotime($date);
+
         $data = [
             'section' => 'test',
-            'title' => 'test'
+            'title' => 'test',
+            'soal'  => $questions,
+            'current' => $current,
+            'nama' => session()->get('nama'),
+            'date'  => date('d-m-Y', strtotime($date)),
+            'time'  => date('H:i:s', $time),
         ];
-
-        $helo = [1, 3, 5, 9, 7, 8, 2, 4];
-
-        srand(1234234);
-        shuffle($helo);
-        foreach ($helo as $st) {
-            echo $st;
-        }
 
         return view('test/test', $data);
     }
 
-    public function introduction() {
+    public function introduction()
+    {
         $data = [
             'section' => 'test',
             'title' => 'introduction'
@@ -43,7 +78,8 @@ class Test extends BaseController
         return view('test/introduction', $data);
     }
 
-    public function start() {
+    public function start()
+    {
         $session = session();
         $userModel = new UserModel();
         $nip_nisn = $this->request->getVar('nip_nisn');
@@ -54,7 +90,7 @@ class Test extends BaseController
         if ($data) {
             $pass = $data['password'];
             if (v_pass($password, $pass)) {
-                
+
                 $ses_data = [
                     'id' => $data['id'],
                     'nama' => $data['nama'],
@@ -71,25 +107,15 @@ class Test extends BaseController
             $session->setFlashdata('msg', 'Email does not exist.');
             return redirect()->back();
         }
-        // if ($this->validate($rules)) {
-        //     $data = [
-        //         'nip_nisn'  => $this->request->getVar('nip_nisn'),
-        //         'password'  => pass($this->request->getVar('password')),
-        //         'nama'      => $this->request->getVar('nama'),
-        //         'email'     => $this->request->getVar('email'),
-        //         'level'     => 'User',
-        //         'sebagai'   => $this->request->getVar('sebagai'),
-        //         'sekolah'   => $this->request->getVar('sekolah'),
-        //         'provinsi'  => $this->request->getVar('provinsi'),
-        //         'tahu'      => $this->request->getVar('tahu'),
-        //     ];
-        //     $this->userModel->save($data);
-        //     return redirect()->to(base_url('login'));
-        // } else {
-        //     $data['validation'] = $this->validator;
-        //     $data['section'] = 'auth';
-        //     $data['title'] = 'register';
-        //     return view('auth/register', $data);
-        // }
+
+        $data = [
+            'user_id'     => $this->request->getVar('nip_nisn'),
+            'start_time'  => pass($this->request->getVar('password')),
+            'finish_time' => $this->request->getVar('nama'),
+            'end_time'    => $this->request->getVar('email'),
+            'status'      => 'on_test',
+        ];
+        $this->testModel->save($data);
+        return redirect()->to(base_url('test/' . pass(getTestId())));
     }
 }
