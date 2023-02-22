@@ -43,7 +43,7 @@ $routes->post('/register', 'Auth::register', ['filter' => 'guestAuth']);
 // Test
 $routes->get('/test/introduction', 'Test::introduction', ['filter' => 'userAuth']);
 $routes->post('/test/start', 'Test::start', ['filter' => 'userAuth']);
-$routes->get('/test', 'Test::index', ['filter' => 'userAuth']);
+$routes->get('/test/(:segment)', 'Test::index/$1', ['filter' => 'testAuth']);
 $routes->get('/home/result', 'Home::result', ['filter' => 'userAuth']);
 $routes->get('/home/profile', 'Home::profile', ['filter' => 'userAuth']);
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,21 +12,24 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
     <!-- CSS Local -->
-    <?php if($section == 'auth') : ?>
-        <?php if($title == 'login') : ?>
+    <?php if ($section == 'auth') : ?>
+        <?php if ($title == 'login') : ?>
             <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/login.css'); ?>">
-        <?php elseif($title == 'register') : ?>
+        <?php elseif ($title == 'register') : ?>
             <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/register.css'); ?>">
         <?php endif; ?>
-    <?php elseif($section == 'home') : ?>
+    <?php elseif ($section == 'home') : ?>
         <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/home.css'); ?>">
-    <?php elseif($section == 'test') : ?>
-        <?php if($title == 'introduction') : ?>
+    <?php elseif ($section == 'test') : ?>
+        <?php if ($title == 'introduction') : ?>
             <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/introduction.css'); ?>">
+        <?php elseif ($title == 'test') : ?>
+            <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/test.css'); ?>">
         <?php endif; ?>
     <?php endif; ?>
 </head>
-<body id="home">
+
+<body id="home" class="bgbody">
     <!-- Navbar -->
     <?= $this->include('layout/navbar'); ?>
 
@@ -37,18 +41,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <!-- JS Local -->
-    <?php if($section == 'auth') : ?>
-        <?php if($title == 'login') : ?>
+    <?php if ($section == 'auth') : ?>
+        <?php if ($title == 'login') : ?>
             <script type="text/javascript" src="<?= base_url('assets/js/login.js'); ?>"></script>
-        <?php elseif($title == 'register') : ?>
+        <?php elseif ($title == 'register') : ?>
             <script type="text/javascript" src="<?= base_url('assets/js/register.js'); ?>"></script>
         <?php endif; ?>
-    <?php elseif($section == 'home') : ?>
+    <?php elseif ($section == 'home') : ?>
         <script type="text/javascript" src="<?= base_url('assets/js/home.js'); ?>"></script>
-    <?php elseif($section == 'test') : ?>
-        <?php if($title == 'introduction') : ?>
+    <?php elseif ($section == 'test') : ?>
+        <?php if ($title == 'introduction') : ?>
             <script type="text/javascript" src="<?= base_url('assets/js/introduction.js'); ?>"></script>
+        <?php elseif ($title == 'test') : ?>
+            <script type="text/javascript" src="<?= base_url('assets/js/test.js'); ?>"></script>
         <?php endif; ?>
     <?php endif; ?>
 </body>
+
 </html>

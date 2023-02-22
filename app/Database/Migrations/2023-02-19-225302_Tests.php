@@ -24,7 +24,7 @@ class Tests extends Migration
             ],
             'start_time' => [
                 'type'       => 'DATETIME',
-                'null'       => false
+                'null'       => true
             ],
             'finish_time' => [
                 'type'       => 'DATETIME',
@@ -32,7 +32,7 @@ class Tests extends Migration
             ],
             'end_time' => [
                 'type'       => 'DATETIME',
-                'null'       => false
+                'null'       => true
             ],
             'status' => [
                 'type'       => 'ENUM("on_test", "finished")',
