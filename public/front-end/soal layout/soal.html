@@ -1,0 +1,1151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="soal.css">
+  </head>
+  <body class=" bgbody">
+    
+    <div class="container wadahsoal">
+      <div class="row justify-content-between pt-5">
+        <div class="col-6 text-white">
+          <h1>Hai, Nama</h1>
+          <p>SELAMAT DATANG DI EMPATITUDE-CBT</p>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 col-4 text-end">
+          <div class="date rounded-2 text-center">
+            <p>Tanggal</p>
+          </div>
+          <div class="date rounded-2 text-center">
+            <p id="kodomo"></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-2 col-2 offset-lg-0 offset-md-0 bg-white rounded-2 mb-4 barsoal">
+          <div class="row px-2 py-2 border-bottom border-secondary border-2">
+            <div class="waktu bg-dark text-white text-center">
+              <p id="demo" class="mb-2 mt-2"></p>
+            </div>
+          </div>
+          <div class="row text-center position-relative mb-4">
+            <p>question</p>
+            <h5 class="position-absolute mt-4 hal1">1/50</h5>
+            <h5 class="position-absolute mt-4 hal2 hilang">2/50</h5>
+            <h5 class="position-absolute mt-4 hal3 hilang">3/50</h5>
+            <h5 class="position-absolute mt-4 hal4 hilang">4/50</h5>
+            <h5 class="position-absolute mt-4 hal5 hilang">5/50</h5>
+            <h5 class="position-absolute mt-4 hal6 hilang">6/50</h5>
+            <h5 class="position-absolute mt-4 hal7 hilang">7/50</h5>
+            <h5 class="position-absolute mt-4 hal8 hilang">8/50</h5>
+            <h5 class="position-absolute mt-4 hal9 hilang">9/50</h5>
+            <h5 class="position-absolute mt-4 hal10 hilang">10/50</h5>
+            <h5 class="position-absolute mt-4 hal11 hilang">11/50</h5>
+            <h5 class="position-absolute mt-4 hal12 hilang">12/50</h5>
+            <h5 class="position-absolute mt-4 hal13 hilang">13/50</h5>
+            <h5 class="position-absolute mt-4 hal14 hilang">14/50</h5>
+            <h5 class="position-absolute mt-4 hal15 hilang">15/50</h5>
+            <h5 class="position-absolute mt-4 hal16 hilang">16/50</h5>
+            <h5 class="position-absolute mt-4 hal17 hilang">17/50</h5>
+            <h5 class="position-absolute mt-4 hal18 hilang">18/50</h5>
+            <h5 class="position-absolute mt-4 hal19 hilang">19/50</h5>
+            <h5 class="position-absolute mt-4 hal20 hilang">20/50</h5>
+            <h5 class="position-absolute mt-4 hal21 hilang">21/50</h5>
+            <h5 class="position-absolute mt-4 hal22 hilang">22/50</h5>
+            <h5 class="position-absolute mt-4 hal23 hilang">23/50</h5>
+            <h5 class="position-absolute mt-4 hal24 hilang">24/50</h5>
+            <h5 class="position-absolute mt-4 hal25 hilang">25/50</h5>
+            <h5 class="position-absolute mt-4 hal26 hilang">26/50</h5>
+            <h5 class="position-absolute mt-4 hal27 hilang">27/50</h5>
+            <h5 class="position-absolute mt-4 hal28 hilang">28/50</h5>
+            <h5 class="position-absolute mt-4 hal29 hilang">29/50</h5>
+            <h5 class="position-absolute mt-4 hal30 hilang">30/50</h5>
+            <h5 class="position-absolute mt-4 hal31 hilang">31/50</h5>
+            <h5 class="position-absolute mt-4 hal32 hilang">32/50</h5>
+            <h5 class="position-absolute mt-4 hal33 hilang">33/50</h5>
+            <h5 class="position-absolute mt-4 hal34 hilang">34/50</h5>
+            <h5 class="position-absolute mt-4 hal35 hilang">35/50</h5>
+            <h5 class="position-absolute mt-4 hal36 hilang">36/50</h5>
+            <h5 class="position-absolute mt-4 hal37 hilang">37/50</h5>
+            <h5 class="position-absolute mt-4 hal38 hilang">38/50</h5>
+            <h5 class="position-absolute mt-4 hal39 hilang">39/50</h5> 
+            <h5 class="position-absolute mt-4 hal40 hilang">40/50</h5>
+            <h5 class="position-absolute mt-4 hal41 hilang">41/50</h5>
+            <h5 class="position-absolute mt-4 hal42 hilang">42/50</h5>
+            <h5 class="position-absolute mt-4 hal43 hilang">43/50</h5>
+            <h5 class="position-absolute mt-4 hal44 hilang">44/50</h5>
+            <h5 class="position-absolute mt-4 hal45 hilang">45/50</h5>
+            <h5 class="position-absolute mt-4 hal46 hilang">46/50</h5>
+            <h5 class="position-absolute mt-4 hal47 hilang">47/50</h5>
+            <h5 class="position-absolute mt-4 hal48 hilang">48/50</h5>
+            <h5 class="position-absolute mt-4 hal49 hilang">49/50</h5>
+            <h5 class="position-absolute mt-4 hal50 hilang">50/50</h5>
+          </div>
+          <div class="row g-2 border-top border-secondary border-2">
+            
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon nomor1">
+                <div class="icon bg-secondary text-center rounded-2 text-white biru">
+                  <p>1</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon nomor2">
+                <div class="icon bg-secondary text-center rounded-2 text-white hijau">
+                  <p>2</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon nomor3">
+                <div class="icon bg-secondary text-center rounded-2 text-white orange">
+                  <p>3</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon nomor4">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>4</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon nomor5">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>5</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="soal6.html" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>6</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>7</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>8</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>9</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>10</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>11</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>12</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>13</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>14</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>15</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>16</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>17</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>18</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>19</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>20</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>21</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>22</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>23</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>24</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>25</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>26</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>27</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>28</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>29</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>30</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>31</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>32</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>33</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>34</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>35</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>36</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>37</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>38</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>39</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>40</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>41</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>42</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>43</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>44</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>45</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>46</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>47</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>48</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>49</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <a href="" class="aicon">
+                <div class="icon bg-secondary text-center rounded-2 text-white">
+                  <p>50</p>
+                </div>
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="col-10 col-sm-10 col-lg-7 col-md-8 offset-lg-1">
+          <div class="row position-relative justify-content-center">
+            <div class="col-12 position-absolute hal1">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 1</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="tombol text-end">
+                    <a href="#" class="btn btn-primary">Submit</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang hal2">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 2</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="tombol text-end">
+                    <a href="#" class="btn btn-primary">Submit</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang hal3">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 3</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="tombol text-end">
+                    <a href="#" class="btn btn-primary">Submit</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang hal4">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 4</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="tombol text-end">
+                    <a href="#" class="btn btn-primary">Submit</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang hal5">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 5</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="tombol text-end">
+                    <a href="#" class="btn btn-primary">Submit</a>
+                    <a href="#" class="btn btn-primary selesai">Selesai</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 6</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 7</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 8</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 9</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 10</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 11</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 12</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 13</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 14</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 15</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 16</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 17</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 18</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 19</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 20</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 21</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 22</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 23</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 24</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 25</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 26</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 27</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 28</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 29</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 30</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 31</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 32</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 33</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 34</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 35</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 36</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 37</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 38</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 39</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 40</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 41</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 42</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 43</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 44</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 45</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 46</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 47</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 48</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 49</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 position-absolute hilang">
+              <div class="card" style="width: 100%;">
+                <h5 align="center" class="mt-3">Soal 50</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-8 col-9 hilang rampung mt-5 position-fixed">
+              <div class="card shadow-lg" style="width: 100%;">
+                <div class="card-body text-center">
+                  <p class="card-text" align="center">Apakah kamu yakin untuk menyimpan <br>
+                  jawaban dan mengakhiri penilaian dalam <br>
+                  Emaptitude-CBT ?</p>
+                  <a href="#" class="btn btn-primary">Ya</a>
+                  <a href="#" class="btn btn-primary tidak">Tidak</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container-fluid halang position-absolute bottom-0 top-0 start-0 end-0 hilang position-fixed">
+      <div class="row justify-content-center">
+        <div class="col-3 bg-white text-center habis py-4 rounded-3 position-fixed">
+          <p>Waktu Habis!</p>
+          <a href="#" class="btn btn-primary tidak">Lihat Hasil</a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="soal.js"></script>
+  </body>
+</html>

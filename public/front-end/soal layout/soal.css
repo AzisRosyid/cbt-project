@@ -1,0 +1,68 @@
+.bgbody {
+	background-color: #133055;
+}
+
+.date {
+	color: #133055;
+	background-color: white;
+}
+
+.icon {
+	font-size: 100%;
+	width: 100%;
+}
+
+.icon:hover {
+	font-size: 100%;
+	background-color: lightgrey !important;
+	width: 100%;
+}
+
+.icon:active {
+	font-size: 100%;
+	background-color: white !important;
+	color: #133055 !important;
+	width: 100%;
+}
+
+.aicon {
+	text-decoration: none;
+}
+
+.card h5 {
+	color: #133055 !important;
+}
+
+.hilang {
+	transform: scale(0);
+}
+
+.biru {
+	background-color: blue !important;
+}
+
+.hijau {
+	background-color: green !important;
+}
+
+.orange {
+	background-color: orange !important;
+}
+
+.halang {
+	background-color: rgba(0, 0, 0, .5);
+	padding-top: 20%;
+
+}
+
+.habis {
+
+}
+
+
+@media (max-width: 576px) {
+	.barsoal {
+		height: 500px;
+		overflow: auto;
+		}
+}

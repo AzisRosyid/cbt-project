@@ -19,7 +19,7 @@
 
 
 const timeH = document.getElementById('kodomo');
-let timeSecond = timeH[0].innerHTML;
+let timeSecond = timeH.innerHTML <= 3600 ? timeH.innerHTML : 3600;
 
 displayTime(timeSecond);
 
@@ -44,7 +44,7 @@ function end(){
 
 
 const timeI = document.getElementById('demo');
-let Second = 10;
+let Second = timeI.innerHTML <= 3600 ? timeI.innerHTML : 3600;
 
 display(Second);
 

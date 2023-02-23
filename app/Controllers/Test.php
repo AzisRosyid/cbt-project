@@ -25,41 +25,47 @@ class Test extends BaseController
         helper('method');
     }
 
-    public function index($id)
+    public function index($id, $no = false)
     {
         if (!v_pass(getTestId(), $id))
             return redirect()->back();
 
-        // $helo = [1, 3, 5, 9, 7, 8, 2, 4];
-
-        // srand(1234234);
-        // shuffle($helo);
-        // foreach ($helo as $st) {
-        //     echo $st;
-        // }
-
-        // return base_url('test/'.pass($testModel->where('user_id', session()->get('id'))->orderBy("id", "desc")->first()['id']));
-
-        $questions = getQuestions();
-        $current = null;
-        foreach ($questions as $i => $st) {
-            $current = $i;
-            if ($this->testAnswerModel->where('test_id', getTestId())->where('question_id', $st['id'])->where('answer', !null)->where('is_submit', true)->first() == null)
-                break;
+        $colors = null; $soal = null;
+        $answers = $this->testAnswerModel->where('test_id', getTestId())->findAll();
+        foreach ($answers as $i=>$st) {
+            if ($st['answer'] != null && $st['is_submit'] == true) 
+                $colors[$i] = 'biru';
+            elseif ($st['answer'] != null)
+                $colors[$i] = 'hijau';
+            elseif ($st['is_submit'] == true)
+                $colors[$i] = 'kuning';
+            else
+                $colors[$i] = '';
         }
+
+        if (!$no) {
+            foreach (getQuestions() as $st) {
+                $soal = $st;
+                if ($this->testAnswerModel->where('test_id', getTestId())->where('question_id', $st['id'])->where('answer', !null)->where('is_submit', true)->first() == null)
+                    break;
+            }
+        }
+        else 
+            $soal = getQuestions()[$no-1];     
+            
         $test = $this->testModel->where('id', getTestId())->first();
 
-        //dd($questions);
         date_default_timezone_set('Asia/Jakarta');
         $date = date('d-m-Y H:i:s');
-        // date('d-m-Y H:i:s', strtotime("+1 hour"));
-        $time = strtotime($test['end_time']) - strtotime($date);
+        $time = abs(strtotime($test['end_time']) - strtotime($date));
 
         $data = [
             'section' => 'test',
             'title' => 'test',
-            'soal'  => $questions,
-            'current' => $current,
+            'no'    => $no,
+            'soal'  => $soal,
+            'colors' => $colors,
+            'url' => 'test/'.pass(getTestId()),
             'nama' => session()->get('nama'),
             'date'  => date('d-m-Y', strtotime($date)),
             'time'  => gmdate("i:s", $time),
