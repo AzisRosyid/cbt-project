@@ -30,7 +30,7 @@ class Test extends BaseController
         if (!v_pass(getTestId(), $id))
             return redirect()->back();
 
-        $colors = null; $soal = null;
+        $colors = null; $soal = null; $opsi = null;
         $answers = $this->testAnswerModel->where('test_id', getTestId())->findAll();
         foreach ($answers as $i=>$st) {
             if ($st['answer'] != null && $st['is_submit'] == true) 
@@ -52,7 +52,11 @@ class Test extends BaseController
         }
         else 
             $soal = getQuestions()[$no-1];     
-            
+    
+        $questionOptions = $this->questionOptionModel->where('question_id', $soal['id'])->orderBy('option', 'asc')->findAll();
+        foreach ($questionOptions as $i=>$st) 
+            $opsi[$i] = $st;
+        
         $test = $this->testModel->where('id', getTestId())->first();
 
         date_default_timezone_set('Asia/Jakarta');
@@ -65,6 +69,7 @@ class Test extends BaseController
             'no'    => $no,
             'soal'  => $soal,
             'colors' => $colors,
+            'opsi'  => $opsi,
             'url' => 'test/'.pass(getTestId()),
             'nama' => session()->get('nama'),
             'date'  => date('d-m-Y', strtotime($date)),

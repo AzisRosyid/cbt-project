@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class QuestionOptionModel extends Model
 {
-    protected $table = 'question_models';
+    protected $table = 'question_options';
     protected $primaryKey = 'id';
     protected $useTimestamps = true;
 

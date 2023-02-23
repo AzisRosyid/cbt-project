@@ -1,21 +1,3 @@
-// const tanggaltujuan = new Date('Mar 1, 2023 16:00:00').getTime();
-
-
-// const hitungmundur = setInterval(function() {
-
-// 	const sekarang = new Date().getTime();
-// 	const selisih = tanggaltujuan - sekarang;
-
-// 	const hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
-// 	const jam = Math.floor(selisih % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
-// 	const menit = Math.floor(selisih % (1000 * 60 * 60) / (1000 * 60));
-// 	const detik = Math.floor(selisih % (1000 * 60) / 1000);
-
-// 	const teks = document.getElementById('demo');
-// 	teks.innerHTML = hari + ':' + jam + ':' + menit + ':' + detik; 
-
-// }, 1000);
-
 
 
 const timeH = document.getElementById('kodomo');
@@ -66,3 +48,76 @@ function display(second) {
 function endTime(){
 	timeI.innerHTML= 'time out'
 };
+
+function endTime(){
+	$('.halang').removeClass('hilang');
+	$('.wadahsoal').addClass('hilang');
+
+};
+
+
+$('.nomor1').on('click', function(e) {
+	$('.mt-4').addClass('hilang');
+	$('.col-12').addClass('hilang');
+	$('.hal1').removeClass('hilang');
+	
+
+
+		e.preventDefault();
+});
+
+$('.nomor2').on('click', function(e) {
+	$('.mt-4').addClass('hilang');
+	$('.col-12').addClass('hilang');
+	$('.hal2').removeClass('hilang');
+	
+
+
+		e.preventDefault();
+});
+
+$('.nomor3').on('click', function(e) {
+	$('.mt-4').addClass('hilang');
+	$('.col-12').addClass('hilang');
+	$('.hal3').removeClass('hilang');
+	
+
+
+		e.preventDefault();
+});
+
+$('.nomor4').on('click', function(e) {
+	$('.mt-4').addClass('hilang');
+	$('.col-12').addClass('hilang');
+	$('.hal4').removeClass('hilang');
+	
+
+
+		e.preventDefault();
+});
+
+$('.nomor5').on('click', function(e) {
+	$('.mt-4').addClass('hilang');
+	$('.col-12').addClass('hilang');
+	$('.hal5').removeClass('hilang');
+	
+
+
+		e.preventDefault();
+});
+
+$('.selesai').on('click', function(e) {
+	$('.rampung').removeClass('hilang');
+	
+
+
+		e.preventDefault();
+});
+
+$('.tidak').on('click', function(e) {
+	$('.rampung').addClass('hilang');
+	
+
+
+		e.preventDefault();
+});

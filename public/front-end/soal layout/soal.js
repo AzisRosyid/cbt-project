@@ -19,7 +19,7 @@
 
 
 const timeH = document.getElementById('kodomo');
-let timeSecond = 15;
+let timeSecond = 1500;
 
 displayTime(timeSecond);
 
@@ -46,7 +46,7 @@ function end(){
 
 
 const timeI = document.getElementById('demo');
-let Second = 15;
+let Second = 1500;
 
 display(Second);
 

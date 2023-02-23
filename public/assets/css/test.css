@@ -48,3 +48,21 @@
 .orange {
 	background-color: orange !important;
 }
+
+.halang {
+	background-color: rgba(0, 0, 0, .5);
+	padding-top: 20%;
+
+}
+
+.habis {
+
+}
+
+
+@media (max-width: 576px) {
+	.barsoal {
+		height: 500px;
+		overflow: auto;
+		}
+}
