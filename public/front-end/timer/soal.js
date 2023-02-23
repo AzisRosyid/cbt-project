@@ -19,7 +19,7 @@
 
 
 const timeH = document.getElementById('kodomo');
-let timeSecond = timeH[0].innerHTML;
+let timeSecond = 10;
 
 displayTime(timeSecond);
 
@@ -41,6 +41,8 @@ function displayTime(second) {
 function end(){
 	timeH.innerHTML= 'time out'
 };
+
+
 
 
 const timeI = document.getElementById('demo');
@@ -66,3 +68,4 @@ function display(second) {
 function endTime(){
 	timeI.innerHTML= 'time out'
 };
+

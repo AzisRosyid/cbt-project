@@ -13,7 +13,7 @@
                 <p><?= $date; ?></p>
             </div>
             <div class="date rounded-2 text-center">
-                <p><?= $time; ?></p>
+                <p id="kodomo"><?= $time; ?></p>
             </div>
         </div>
     </div>
@@ -28,7 +28,7 @@
         <div class="col-lg-2 bg-white rounded-2">
             <div class="row px-2 py-2 border-bottom border-secondary border-2">
                 <div class="waktu bg-dark text-white text-center">
-                    <p><?= $time; ?></p>
+                    <p id="demo"><?= $time; ?></p>
                 </div>
             </div>
             <div class="row text-center position-relative mb-4">
