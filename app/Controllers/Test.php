@@ -10,6 +10,7 @@ use App\Models\TestModel;
 use App\Models\UserModel;
 use CodeIgniter\I18n\Time;
 use DateTime;
+use Exception;
 
 class Test extends BaseController
 {
@@ -46,7 +47,7 @@ class Test extends BaseController
         if (!$no) {
             foreach (getQuestions() as $i=>$st) {
                 $no = $i+1;
-                if ($this->testAnswerModel->where('test_id', getTestId())->where('question_id', $st['id'])->where('answer', !null)->where('is_submit', true)->first() == null)
+                if ($this->testAnswerModel->where('test_id', getTestId())->where('question_id', $st['id'])->where('answer', null)->where('is_submit', false)->first() != null)
                     break;
             }
 
@@ -79,29 +80,32 @@ class Test extends BaseController
     }
 
     public function submit($id, $no = false) {
+        dd($this->request->getPost());
+        if (!v_pass(getTestId(), $id))
+            return redirect()->back();
 
-        // if (!$answer)
-        //     return redirect()->back();
-        $soal = getQuestions()[$no - 1];
-        $opsi = getQuestionOptions($soal['id']);
+        $soal = null;
+        try {
+            $soal = getQuestions()[$no - 1];
+        } catch (Exception $e) {
+            return redirect()->back();
+        }
+        
         $answer = $this->request->getVar('answer');
 
-        $valid = false;
-        foreach ($opsi as $st)
-            if ($st['option'] == $answer || $answer == null) {
-                $valid = true;
-                break;
-            }
-        
-        if (!$valid) 
-            return redirect()->back();
-        
         if ($answer) {
+            $opsi = null;
+
+            try {
+                $opsi = getQuestionOptions($soal['id'])[$answer - 1];
+            } catch (Exception $e) {
+                return redirect()->back();
+            }
+
             $answer = $this->testAnswerModel->where('test_id', getTestId())->where('question_id', $soal['id'])->first();
-            $opsi = getQuestionOptions($soal['id'])[$answer];
             $data = [
                 'id'    => $answer['id'],
-                'answer' => $opsi['answer'],
+                'answer' => $opsi['option'],
                 'is_submit' => true
             ];
             $this->testAnswerModel->save($data);
@@ -158,5 +162,4 @@ class Test extends BaseController
         $this->testModel->save($data);
         return redirect()->to(base_url('test/' . pass(getTestId())));
     }
-
 }

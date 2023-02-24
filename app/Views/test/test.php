@@ -52,7 +52,7 @@
                 <?php if (isset($opsi)) : ?>
                   <?php foreach ($opsi as $i => $st) : ?>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="answer" value="<?= $i ?>" id="flexRadioDefault<?= $i; ?>">
+                      <input class="form-check-input" type="radio" name="answer" value="<?= $i+1; ?>" id="flexRadioDefault<?= $i; ?>">
                       <label class="form-check-label" for="flexRadioDefault<?= $i; ?>">
                         <?= ($st['option'] . ". " . $st['content']); ?>
                       </label>
@@ -60,7 +60,7 @@
                   <?php endforeach; ?>
                 <?php endif; ?>
                 <div class="tombol text-end">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" name="button" value="submit" class="btn btn-primary">Submit</button>
                   <?php if (count($colors) == $no) : ?>
                     <a href="#" class="btn btn-primary selesai">Selesai</a>
                   <?php endif; ?>
