@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\QuestionModel;
+use App\Models\QuestionOptionModel;
+use App\Models\TestAnswerModel;
 use App\Models\TestModel;
 
 function pass($password)
@@ -26,6 +28,24 @@ function getQuestions()
     srand(getTestId());
     shuffle($questions);
     return $questions;
+}
+
+function getQuestionOptions($id) 
+{
+    $opsi = null;
+    $questionOptionModel = new QuestionOptionModel();
+    $questionOptions = $questionOptionModel->where('question_id', $id)->orderBy('option', 'asc')->findAll();
+    foreach ($questionOptions as $i=>$st) 
+        $opsi[$i] = $st;
+    return $opsi;
+}
+
+function getAnswers() {
+    $testAnswerModel = new TestAnswerModel();
+    $answers = $testAnswerModel->where('test_id', getTestId())->findAll();
+    srand(getTestId());
+    shuffle($answers);
+    return $answers;
 }
 
 function r_session()

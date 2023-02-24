@@ -28,9 +28,11 @@ class TestAnswers extends Migration
                 'unsigned'       => true,
                 'null'           => false
             ],
-            'answer' => [
-                'type' => 'ENUM("a", "b", "c", "d", "e")',
-                'null' => true,
+            'option_id' => [
+                'type'           => 'INT',
+                'constraint'     => 11,
+                'unsigned'       => true,
+                'null'           => false
             ],
             'is_submit' => [
                 'type'       => 'BOOLEAN',
@@ -42,6 +44,7 @@ class TestAnswers extends Migration
         $this->forge->addKey('id', true);
         $this->forge->addForeignKey('test_id', 'tests', 'id', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('question_id', 'questions', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('option_id', 'question_options', 'id', 'CASCADE', 'CASCADE');
         $this->forge->createTable('test_answers');
     }
 

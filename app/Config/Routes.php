@@ -36,7 +36,7 @@ $routes->get('/', 'Home::index', ['filter' => 'guestAuth']);
 // Auth
 $routes->get('/login', 'Auth::loginIndex', ['filter' => 'guestAuth']);
 $routes->get('/register', 'Auth::registerIndex', ['filter' => 'guestAuth']);
-$routes->get('/logout', 'Auth::logout', ['filter' => 'userAuth']);
+$routes->get('/logout', 'Auth::logout', ['filter' => 'logoutAuth']);
 $routes->post('/login', 'Auth::login', ['filter' => 'guestAuth']);
 $routes->post('/register', 'Auth::register', ['filter' => 'guestAuth']);
 
@@ -45,6 +45,7 @@ $routes->get('/test/introduction', 'Test::introduction', ['filter' => 'userAuth'
 $routes->post('/test/start', 'Test::start', ['filter' => 'userAuth']);
 $routes->get('/test/(:segment)', 'Test::index/$1', ['filter' => 'testAuth']);
 $routes->get('/test/(:segment)/(:num)', 'Test::index/$1/$2', ['filter' => 'testAuth']);
+$routes->post('/test/(:segment)/(:num)', 'Test::submit/$1/$2', ['filter' => 'testAuth']);
 $routes->get('/home/result', 'Home::result', ['filter' => 'userAuth']);
 $routes->get('/home/profile', 'Home::profile', ['filter' => 'userAuth']);
 

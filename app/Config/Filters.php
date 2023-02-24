@@ -29,6 +29,7 @@ class Filters extends BaseConfig
         'adminAuth'     => AdminAuth::class,
         'guestAuth'     => GuestAuth::class,
         'testAuth'      => TestAuth::class,
+        'logoutAuth'    => logoutAuth::class,
     ];
 
     /**

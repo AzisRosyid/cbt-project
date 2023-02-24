@@ -47,12 +47,12 @@
             <h5 align="center" class="mt-3">Soal <?= $no; ?></h5>
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
-              <form action="" method="post">
+              <form action="<?= base_url($url.'/'.$no); ?>" method="post">
                 <p class="card-text"><?= $soal['content']; ?></p>
                 <?php if (isset($opsi)) : ?>
                   <?php foreach ($opsi as $i => $st) : ?>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="answer" value="<?= $st['id']; ?>" id="flexRadioDefault<?= $i; ?>">
+                      <input class="form-check-input" type="radio" name="answer" value="<?= $i ?>" id="flexRadioDefault<?= $i; ?>">
                       <label class="form-check-label" for="flexRadioDefault<?= $i; ?>">
                         <?= ($st['option'] . ". " . $st['content']); ?>
                       </label>
@@ -60,7 +60,7 @@
                   <?php endforeach; ?>
                 <?php endif; ?>
                 <div class="tombol text-end">
-                  <a href="<?= base_url($url."/".(count($colors) == $no ? $no : $no+1)); ?>" class="btn btn-primary">Submit</a>
+                  <button type="submit" class="btn btn-primary">Submit</button>
                   <?php if (count($colors) == $no) : ?>
                     <a href="#" class="btn btn-primary selesai">Selesai</a>
                   <?php endif; ?>
