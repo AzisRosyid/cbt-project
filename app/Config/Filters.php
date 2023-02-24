@@ -4,6 +4,7 @@ namespace Config;
 
 use App\Filters\AdminAuth;
 use App\Filters\GuestAuth;
+use App\Filters\LogoutAuth;
 use App\Filters\TestAuth;
 use App\Filters\UserAuth;
 use CodeIgniter\Config\BaseConfig;
@@ -29,7 +30,7 @@ class Filters extends BaseConfig
         'adminAuth'     => AdminAuth::class,
         'guestAuth'     => GuestAuth::class,
         'testAuth'      => TestAuth::class,
-        'logoutAuth'    => logoutAuth::class,
+        'logoutAuth'    => LogoutAuth::class,
     ];
 
     /**

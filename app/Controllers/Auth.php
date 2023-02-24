@@ -40,7 +40,6 @@ class Auth extends BaseController
 
     public function login()
     {
-      //  dd($this->request->getPost());
         $session = session();
         $nip_nisn = $this->request->getVar('nip_nisn');
         $password = $this->request->getVar('password');

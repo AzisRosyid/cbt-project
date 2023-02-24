@@ -31,33 +31,35 @@ class Test extends BaseController
         if (!v_pass(getTestId(), $id))
             return redirect()->back();
 
-        $colors = null; $soal = null;
-        $answers = getAnswers();
-        foreach ($answers as $i=>$st) {
-            if ($st['answer'] != null && $st['is_submit'] == true) 
-                $colors[$i] = 'biru';
-            elseif ($st['answer'] != null)
-                $colors[$i] = 'hijau';
-            elseif ($st['is_submit'] == true)
-                $colors[$i] = 'orange';
-            else
-                $colors[$i] = '';
-        }
+        $colors = null; $soal = null; 
 
         if (!$no) {
             foreach (getQuestions() as $i=>$st) {
                 $no = $i+1;
-                if ($this->testAnswerModel->where('test_id', getTestId())->where('question_id', $st['id'])->where('answer', null)->where('is_submit', false)->first() != null)
+                if ($this->testAnswerModel->where('test_id', getTestId())->where('question_id', $st['id'])->where('option_id', null)->where('is_submit', false)->first() != null)
                     break;
             }
 
             return redirect()->to(base_url('test/'.pass(getTestId()).'/'.$no));
         }
         else 
-        $soal = getQuestions()[$no-1];     
-        
+        $soal = getQuestions()[$no-1];
+
         $opsi = getQuestionOptions($soal['id']);
         $test = $this->testModel->where('id', getTestId())->first();
+        $jawab = $this->testAnswerModel->where('question_id', $soal['id'])->where('test_id', getTestId())->first();
+        
+        $answers = getAnswers();
+        foreach ($answers as $i=>$st) {
+            if ($st['option_id'] != null && $st['is_submit'] == true) 
+                $colors[$i] = 'biru';
+            elseif ($st['option_id'] != null)
+                $colors[$i] = 'hijau';
+            elseif ($st['is_submit'] == true)
+                $colors[$i] = 'orange';
+            else
+                $colors[$i] = '';
+        }
         
         date_default_timezone_set('Asia/Jakarta');
         $date = date('d-m-Y H:i:s');
@@ -70,6 +72,7 @@ class Test extends BaseController
             'soal'  => $soal,
             'colors' => $colors,
             'opsi'  => $opsi,
+            'jawab' => $jawab,
             'url' => 'test/'.pass(getTestId()),
             'nama' => session()->get('nama'),
             'date'  => date('d-m-Y', strtotime($date)),
@@ -80,13 +83,14 @@ class Test extends BaseController
     }
 
     public function submit($id, $no = false) {
-        dd($this->request->getPost());
         if (!v_pass(getTestId(), $id))
             return redirect()->back();
 
-        $soal = null;
+        $soal = null; $is_submit = false;
         try {
             $soal = getQuestions()[$no - 1];
+            if ($this->request->getVar('button') == 'submit')
+                $is_submit = true;
         } catch (Exception $e) {
             return redirect()->back();
         }
@@ -94,7 +98,7 @@ class Test extends BaseController
         $answer = $this->request->getVar('answer');
 
         if ($answer) {
-            $opsi = null;
+            $opsi = null; $jawab = null;
 
             try {
                 $opsi = getQuestionOptions($soal['id'])[$answer - 1];
@@ -103,21 +107,45 @@ class Test extends BaseController
             }
 
             $answer = $this->testAnswerModel->where('test_id', getTestId())->where('question_id', $soal['id'])->first();
+
+            if ($answer['option_id'] != $opsi['id'] && !$is_submit && $answer['is_submit']) {
+                $is_submit = true;
+                $jawab = $answer['option_id'];
+            } else {
+                $jawab = $opsi['id'];
+            }
+
             $data = [
                 'id'    => $answer['id'],
-                'answer' => $opsi['option'],
-                'is_submit' => true
+                'option_id' => $jawab,
+                'is_submit' => $is_submit
             ];
             $this->testAnswerModel->save($data);
         } else {
-            $answer = $this->testAnswerModel->where('test_id', getTestId())->where('question_id', $soal['id'])->first();
+            $jawab = null;
+            $answer = $this->testAnswerModel->where('test_id', getTestId
+            ())->where('question_id', $soal['id'])->first();
+
+            if ($answer['is_submit'] && !$is_submit) {
+                $is_submit = true;
+                $jawab = $answer['option_id'];
+            }
+            else if ($answer['is_submit'])
+                $is_submit = true;
+            else if (!$is_submit)
+                $jawab = $answer['option_id'];
+
             $data = [
                 'id' => $answer['id'],
-                'answer' => null,
-                'is_submit' => true
+                'option_id' => $jawab,
+                'is_submit' => $is_submit
             ];
             $this->testAnswerModel->save($data);
         }
+
+        $nomor = $this->request->getVar('button');
+        if ($nomor != 'submit')
+            return redirect()->to(base_url('test/'.pass(getTestId()).'/'.($nomor <= count(getQuestions()) ? $nomor : $no)));;
 
         return redirect()->to(base_url('test/'.pass(getTestId()).'/'.($no < count(getQuestions()) ? $no+1 : $no)));;
     }

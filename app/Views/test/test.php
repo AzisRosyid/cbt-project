@@ -27,14 +27,15 @@
         <p>question</p>
         <h5 class="position-absolute mt-4"><?= $no . '/' . count($colors); ?></h5>
       </div>
+      <form action="<?= base_url($url.'/'.$no); ?>" method="post">
       <div class="row g-2 border-top border-secondary border-2">
         <?php foreach ($colors as $i => $st) : ?>
           <div class="col-6 col-md-2 col-lg-2 col-sm-6">
-            <a href="<?= base_url($url . '/' . ($i + 1)); ?>" class="aicon ">
+            <button type="submit" name="button" value="<?= $i + 1; ?>" href="<?= base_url($url . '/' . ($i + 1)); ?>" class="aicon ">
               <div class="icon bg-secondary text-center rounded-2 text-white <?= $st; ?>">
                 <p><?= $i + 1; ?></p>
               </div>
-            </a>
+        </button>
           </div>
         <?php endforeach; ?>
       </div>
@@ -47,12 +48,11 @@
             <h5 align="center" class="mt-3">Soal <?= $no; ?></h5>
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
-              <form action="<?= base_url($url.'/'.$no); ?>" method="post">
                 <p class="card-text"><?= $soal['content']; ?></p>
                 <?php if (isset($opsi)) : ?>
                   <?php foreach ($opsi as $i => $st) : ?>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="answer" value="<?= $i+1; ?>" id="flexRadioDefault<?= $i; ?>">
+                      <input class="form-check-input" type="radio" name="answer" value="<?= $i+1; ?>" id="flexRadioDefault<?= $i; ?>" <?= $jawab['option_id'] == $st['id'] ? 'checked' : ''; ?>>
                       <label class="form-check-label" for="flexRadioDefault<?= $i; ?>">
                         <?= ($st['option'] . ". " . $st['content']); ?>
                       </label>

@@ -32,7 +32,7 @@ class TestAnswers extends Migration
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
-                'null'           => false
+                'null'           => true
             ],
             'is_submit' => [
                 'type'       => 'BOOLEAN',

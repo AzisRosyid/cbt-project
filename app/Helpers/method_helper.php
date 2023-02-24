@@ -53,7 +53,10 @@ function r_session()
     if (session()->get('id') == null)
         return;
     $testModel = new TestModel();
-    $status = $testModel->where('user_id', session()->get('id'))->orderBy("id", "desc")->first()['status'];
+    $status = 'none';
+    try {
+        $status = $testModel->where('user_id', session()->get('id'))->orderBy("id", "desc")->first()['status'];
+    } catch (Exception $e) { }
 
     $data = [
         'id' => session()->get('id'),

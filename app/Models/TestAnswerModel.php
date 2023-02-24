@@ -13,7 +13,7 @@ class TestAnswerModel extends Model
     protected $allowedFields = [
         'test_id',
         'question_id',
-        'answer',
+        'option_id',
         'is_submit'
     ];
 }
