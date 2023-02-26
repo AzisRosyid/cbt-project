@@ -18,7 +18,7 @@
                     <i class="bi bi-person-vcard mr-2 boco"></i>
                   </div>
                   <h5 class="card-title">Jumlah Siswa</h5>
-                  <div class="display-4 fw-bold">32</div>
+                  <div class="display-4 fw-bold"><?= $siswa; ?></div>
                   <a href="siswa.html" class=" text-white"><p class="card-text">Lihat Detail</p></a>
                 </div>
               </div>
@@ -29,7 +29,7 @@
                     <i class="bi bi-file-earmark-bar-graph mr-2 boco"></i>
                   </div>
                   <h5 class="card-title">Jumlah Soal</h5>
-                  <div class="display-4 fw-bold">32</div>
+                  <div class="display-4 fw-bold"><?= $soal; ?></div>
                   <a href="soal.html" class=" text-white"><p class="card-text">Lihat Detail</p></a>
                 </div>
               </div>
@@ -40,7 +40,7 @@
                     <i class="bi bi-file-earmark-fill mr-2 boco"></i>
                   </div>
                   <h5 class="card-title">Jumlah Hasil</h5>
-                  <div class="display-4 fw-bold">32</div>
+                  <div class="display-4 fw-bold"><?= $hasil; ?></div>
                   <a href="hasil.html" class=" text-white"><p class="card-text">Lihat Detail</p></a>
                 </div>
               </div>

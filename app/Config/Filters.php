@@ -3,6 +3,7 @@
 namespace Config;
 
 use App\Filters\AdminAuth;
+use App\Filters\FinishAuth;
 use App\Filters\GuestAuth;
 use App\Filters\LogoutAuth;
 use App\Filters\ResultAuth;
@@ -33,6 +34,7 @@ class Filters extends BaseConfig
         'testAuth'      => TestAuth::class,
         'logoutAuth'    => LogoutAuth::class,
         'resultAuth'    => ResultAuth::class,
+        'finishAuth'    => FinishAuth::class
     ];
 
     /**

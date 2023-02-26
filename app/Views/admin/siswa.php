@@ -27,24 +27,14 @@
           </tr>
         </thead>
         <tbody class="table-group-divider">
+            <?php foreach($siswa as $i => $st) : ?>
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>212837</td>
-            <td>SMA</td>
+            <th scope="row"><?= $i + 1; ?></th>
+            <td><?= $st['nama']; ?></td>
+            <td><?= $st['nip_nisn']; ?></td>
+            <td><?= $st['sekolah']; ?></td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>212142</td>
-            <td>SMA</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry the Bird</td>
-            <td>212142</td>
-            <td>SMA</td>
-          </tr>
+            <?php endforeach; ?>
         </tbody>
       </table>
       <!-- akhir daftar siswa -->

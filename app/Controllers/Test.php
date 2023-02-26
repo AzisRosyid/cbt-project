@@ -35,7 +35,7 @@ class Test extends BaseController
         $time = strtotime($test['end_time']) - strtotime($date);
         $colors = null; $soal = null;
 
-        $time = 10;
+        $time = 2600;
 
         if ($time <= 0)
            return redirect()->to(base_url('test/'.pass(getTestId()).'/finish')); 
@@ -216,9 +216,13 @@ class Test extends BaseController
         ];
         $this->testModel->save($data);
 
+        $test = $this->testModel->where('id', getTestId())->first();
+
         $data = [
             'section' => 'test',
             'title' => 'test',
+            'url' => 'test/'.pass(getTestId()),
+            'message' => $test['finish_time'] > $test['end_time'] ? "Waktu Habis!" : "Test Selesai!"
         ];
         
         return view('test/finish', $data);
@@ -234,7 +238,7 @@ class Test extends BaseController
         
         $data = [
             'section' => 'test',
-            'title'   => 'result'
+            'title'   => 'result',
         ];
 
         return view('test/result', $data);
