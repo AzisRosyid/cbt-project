@@ -1,7 +1,7 @@
 
 
 const timeH = document.getElementById('kodomo');
-let timeSecond = timeH.innerHTML <= 3600 ? timeH.innerHTML : 3600;
+let timeSecond = timeH.innerHTML;
 
 displayTime(timeSecond);
 
@@ -25,7 +25,7 @@ function end() {
 };
 
 const timeI = document.getElementById('demo');
-let Second = timeI.innerHTML <= 3600 ? timeI.innerHTML : 3600;
+let Second = timeI.innerHTML;
 
 display(Second);
 
@@ -46,6 +46,7 @@ function display(second) {
 
 function endTime() {
 	timeI.innerHTML = 'time out'
+	finish();
 };
 
 function endTime() {
@@ -53,12 +54,22 @@ function endTime() {
 	$('.wadahsoal').addClass('hilang');
 };
 
-$('.selesai').on('click', function (e) {
+function finish(){
+	window.location="http://localhost:8080/test/selesai";
+}
+
+$('.selesai').on('click', function(e) {
 	$('.rampung').removeClass('hilang');
-	e.preventDefault();
+		e.preventDefault();
 });
 
-$('.tidak').on('click', function (e) {
+$('.tidak').on('click', function(e) {
 	$('.rampung').addClass('hilang');
+		e.preventDefault();
+});
+
+$('.clear').on('click', function(e) {
+	document.getElementById('mefo').reset();
+	$('.form-check-input').prop('checked', false);
 	e.preventDefault();
 });

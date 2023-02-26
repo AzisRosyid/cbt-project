@@ -64,6 +64,7 @@ class Test extends BaseController
         date_default_timezone_set('Asia/Jakarta');
         $date = date('d-m-Y H:i:s');
         $time = abs(strtotime($test['end_time']) - strtotime($date));
+        // gmdate("i:s", $time)
         
         $data = [
             'section' => 'test',
@@ -76,7 +77,7 @@ class Test extends BaseController
             'url' => 'test/'.pass(getTestId()),
             'nama' => session()->get('nama'),
             'date'  => date('d-m-Y', strtotime($date)),
-            'time'  => gmdate("i:s", $time),
+            'time'  => $time,
         ];
         
         return view('test/test', $data);
@@ -108,7 +109,7 @@ class Test extends BaseController
 
             $answer = $this->testAnswerModel->where('test_id', getTestId())->where('question_id', $soal['id'])->first();
 
-            if ($answer['option_id'] != $opsi['id'] && !$is_submit && $answer['is_submit']) {
+            if ($answer['option_id'] == $opsi['id'] && !$is_submit && $answer['is_submit']) {
                 $is_submit = true;
                 $jawab = $answer['option_id'];
             } else {

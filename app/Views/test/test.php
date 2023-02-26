@@ -16,6 +16,7 @@
       </div>
     </div>
   </div>
+  <form action="<?= base_url($url . '/' . $no); ?>" method="post" id="mefo">
   <div class="row">
     <div class="col-lg-2 col-md-4 col-sm-2 col-2 offset-lg-0 offset-md-0 bg-white rounded-2 mb-4 barsoal">
       <div class="row px-2 py-2 border-bottom border-secondary border-2">
@@ -27,18 +28,15 @@
         <p>question</p>
         <h5 class="position-absolute mt-4"><?= $no . '/' . count($colors); ?></h5>
       </div>
-      <form action="<?= base_url($url.'/'.$no); ?>" method="post">
-      <div class="row g-2 border-top border-secondary border-2">
-        <?php foreach ($colors as $i => $st) : ?>
-          <div class="col-6 col-md-2 col-lg-2 col-sm-6">
-            <button type="submit" name="button" value="<?= $i + 1; ?>" href="<?= base_url($url . '/' . ($i + 1)); ?>" class="aicon ">
-              <div class="icon bg-secondary text-center rounded-2 text-white <?= $st; ?>">
+        <div class="row g-2 border-top border-secondary border-2">
+          <?php foreach ($colors as $i => $st) : ?>
+            <div class="col-6 col-md-2 col-lg-2 col-sm-6">
+              <button type="submit" name="button" value="<?= $i + 1; ?>" href="<?= base_url($url . '/' . ($i + 1)); ?>" class="aicon nomor5 icon bg-secondary text-center rounded-2 text-white <?= $st; ?>">
                 <p><?= $i + 1; ?></p>
-              </div>
-        </button>
-          </div>
-        <?php endforeach; ?>
-      </div>
+              </button>
+            </div>
+          <?php endforeach; ?>
+        </div>
     </div>
 
     <div class="col-10 col-sm-10 col-lg-7 col-md-8 offset-lg-1">
@@ -48,24 +46,28 @@
             <h5 align="center" class="mt-3">Soal <?= $no; ?></h5>
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
-                <p class="card-text"><?= $soal['content']; ?></p>
-                <?php if (isset($opsi)) : ?>
-                  <?php foreach ($opsi as $i => $st) : ?>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="answer" value="<?= $i+1; ?>" id="flexRadioDefault<?= $i; ?>" <?= $jawab['option_id'] == $st['id'] ? 'checked' : ''; ?>>
-                      <label class="form-check-label" for="flexRadioDefault<?= $i; ?>">
-                        <?= ($st['option'] . ". " . $st['content']); ?>
-                      </label>
-                    </div>
-                  <?php endforeach; ?>
-                <?php endif; ?>
-                <div class="tombol text-end">
+              <p class="card-text"><?= $soal['content']; ?></p>
+              <?php if (isset($opsi)) : ?>
+                <?php foreach ($opsi as $i => $st) : ?>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="answer" value="<?= $i + 1; ?>" id="flexRadioDefault<?= $i; ?>" <?= $jawab['option_id'] == $st['id'] ? 'checked' : ''; ?>>
+                    <label class="form-check-label" for="flexRadioDefault<?= $i; ?>">
+                      <?= ($st['option'] . ". " . $st['content']); ?>
+                    </label>
+                  </div>
+                <?php endforeach; ?>
+              <?php endif; ?>
+              <div class="row tombol">
+                <div class="col-6">
+                  <a class="btn btn-white text-primary clear">Clear</a>
+                </div>
+                <div class="col-6 text-end">
                   <button type="submit" name="button" value="submit" class="btn btn-primary">Submit</button>
                   <?php if (count($colors) == $no) : ?>
                     <a href="#" class="btn btn-primary selesai">Selesai</a>
                   <?php endif; ?>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
@@ -82,6 +84,7 @@
         </div>
       </div>
     </div>
+    </form>
   </div>
 </div>
 
