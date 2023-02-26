@@ -14,4 +14,20 @@
             </div>
         </div>
     </nav>
+<?php elseif ($section == 'admin') : ?>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-primary position-fixed navbar-dark">
+      <div class="container-fluid">
+          <a class="navbar-brand h1" href="#">ADMIN</a>
+          <form class="d-flex ml-auto" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success bg-success text-light cari" type="submit">Search</button>
+            <a href="" class="icolog">
+              <i class="bi bi-box-arrow-right"></i>
+            </a>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- akhir navbar -->
 <?php endif; ?>

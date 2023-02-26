@@ -46,9 +46,15 @@ $routes->post('/test/start', 'Test::start', ['filter' => 'userAuth']);
 $routes->get('/test/(:segment)', 'Test::index/$1', ['filter' => 'testAuth']);
 $routes->get('/test/(:segment)/(:num)', 'Test::index/$1/$2', ['filter' => 'testAuth']);
 $routes->post('/test/(:segment)/(:num)', 'Test::submit/$1/$2', ['filter' => 'testAuth']);
-$routes->get('/test/(:segment)/finish', 'Test::finish', ['filter' => 'testAuth']);
-$routes->get('/test/(:segment)/result', 'Test::result', ['filter' => 'userAuth']);
-$routes->get('/home/profile', 'Home::profile', ['filter' => 'userAuth']);
+$routes->get('/test/(:segment)/finish', 'Test::finish/$1', ['filter' => 'testAuth']);
+$routes->get('/test/(:segment)/result', 'Test::result/$1', ['filter' => 'resultAuth']);
+
+// Admin
+$routes->get('/admin', 'Admin::index', ['filter' => 'adminAuth']);
+$routes->get('/admin/dashboard', 'Admin::dashboard', ['filter' => 'adminAuth']);
+$routes->get('/admin/siswa', 'Admin::siswa', ['filter' => 'adminAuth']);
+$routes->get('/admin/test', 'Admin::soal', ['filter' => 'adminAuth']);
+$routes->get('/admin/result', 'Admin::hasil', ['filter' => 'adminAuth']);
 
 // $routes->get('/login', 'Auth::index');
 

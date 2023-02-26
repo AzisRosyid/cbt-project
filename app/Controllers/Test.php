@@ -2,14 +2,12 @@
 
 namespace App\Controllers;
 
-use App\Database\Migrations\TestAnswers;
 use App\Models\QuestionModel;
 use App\Models\QuestionOptionModel;
 use App\Models\TestAnswerModel;
 use App\Models\TestModel;
 use App\Models\UserModel;
 use CodeIgniter\I18n\Time;
-use DateTime;
 use Exception;
 
 class Test extends BaseController
@@ -205,7 +203,40 @@ class Test extends BaseController
         return redirect()->to(base_url('test/' . pass(getTestId())));
     }
 
-    public function finish() {
-        return 'Hello World!';
+    public function finish($id) {
+        if (!v_pass(getTestId(), $id))
+            return redirect()->back();
+
+        $time = Time::now('Asia/Jakarta', 'in_ID');
+        
+        $data = [
+            'id'    => getTestId(),
+            'finish_time' => $time,
+            'status' => 'finished'
+        ];
+        $this->testModel->save($data);
+
+        $data = [
+            'section' => 'test',
+            'title' => 'test',
+        ];
+        
+        return view('test/finish', $data);
+    }
+
+    public function result($id) {
+        foreach ($this->testModel->findAll() as $st) 
+            if (v_pass($st['id'], $id))
+                $id = $st['id'];
+        $test = $this->testModel->where('id', $id)->first();
+        if (!$test)
+            return redirect()->back();
+        
+        $data = [
+            'section' => 'test',
+            'title'   => 'result'
+        ];
+
+        return view('test/result', $data);
     }
 }

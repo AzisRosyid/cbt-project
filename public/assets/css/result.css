@@ -1,0 +1,19 @@
+.bgbody {
+	background-color: #133055;
+}
+
+.selamat {
+	color: #133055;
+	font-size: 25px;
+	font-weight: 500;
+}
+
+.selamat span {
+	font-style: italic;
+}
+
+.btn-primary {
+	background-color: white !important;
+	color: #133055;
+	font-weight: bold;
+}

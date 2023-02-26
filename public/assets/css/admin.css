@@ -1,0 +1,61 @@
+.navbar {
+	width: 100%;
+}
+
+.cari:hover {
+	background-color: lightgreen !important;
+	color: white !important;
+}
+
+.bi {
+	color: white;
+	margin-left: 10px;
+	font-size: 20px;
+}
+
+.icolog {
+	padding-top: 5px;
+}
+
+.flex-column a {
+	color: white !important;
+}
+
+.nav-link:hover {
+	background-color: lightgrey;
+}
+
+.me {
+	color: black;
+	font-size: 30px;
+}
+
+.body-icon {
+	position: absolute;
+	z-index: 0;
+	top: 25px;
+	right: 4px;
+	opacity: .4;
+
+}
+
+.boco {
+	font-size: 90px;
+}
+
+.marcad {
+	margin-left: 25px;
+	box-shadow: 1px 1px 5px black;
+}
+
+.bg-secondary {
+	height: 100%;
+}
+
+.badan {
+	height: 100%;
+}
+
+.filesiswa {
+	color: black;
+}

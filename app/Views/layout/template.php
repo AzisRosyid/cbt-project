@@ -25,7 +25,11 @@
             <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/introduction.css'); ?>">
         <?php elseif ($title == 'test') : ?>
             <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/test.css'); ?>">
+        <?php elseif ($title == 'result') : ?>
+            <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/result.css'); ?>">
         <?php endif; ?>
+    <?php elseif ($section == 'admin') : ?>
+        <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/admin.css'); ?>">
     <?php endif; ?>
 </head>
 
@@ -54,7 +58,11 @@
             <script type="text/javascript" src="<?= base_url('assets/js/introduction.js'); ?>"></script>
         <?php elseif ($title == 'test') : ?>
             <script type="text/javascript" src="<?= base_url('assets/js/test.js'); ?>"></script>
+        <?php elseif ($title == 'result') : ?>
+            <script type="text/javascript" src="<?= base_url('assets/js/result.js'); ?>"></script>
         <?php endif; ?>
+    <?php elseif ($section == 'admin') : ?>
+        <script type="text/javascript" src="<?= base_url('assets/js/admin.js'); ?>"></script>
     <?php endif; ?>
 </body>
 
