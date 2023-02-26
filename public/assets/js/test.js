@@ -9,7 +9,7 @@ const countDown = setInterval(() => {
 	timeSecond--;
 	displayTime(timeSecond)
 	if (timeSecond <= 0 || timeSecond < 1) {
-		end();
+		finish();
 		clearInterval(countDown);
 	}
 }, 1000);
@@ -18,10 +18,6 @@ function displayTime(second) {
 	const min = Math.floor(second / 60);
 	const sec = Math.floor(second % 60);
 	timeH.innerHTML = (min < 10 ? '0' : '') + (min) + ':' + (sec < 10 ? '0' : '') + (sec);
-};
-
-function end() {
-	timeH.innerHTML = 'time out'
 };
 
 const timeI = document.getElementById('demo');
@@ -33,7 +29,7 @@ const Down = setInterval(() => {
 	Second--;
 	display(Second)
 	if (Second <= 0 || Second < 1) {
-		endTime();
+		finish();
 		clearInterval(Down);
 	}
 }, 1000);
@@ -45,17 +41,12 @@ function display(second) {
 };
 
 function endTime() {
-	timeI.innerHTML = 'time out'
-	finish();
-};
-
-function endTime() {
 	$('.halang').removeClass('hilang');
 	$('.wadahsoal').addClass('hilang');
 };
 
 function finish(){
-	window.location="http://localhost:8080/test/selesai";
+	window.location = `http://localhost:8080/test/finish`;
 }
 
 $('.selesai').on('click', function(e) {

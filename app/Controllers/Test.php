@@ -31,7 +31,16 @@ class Test extends BaseController
         if (!v_pass(getTestId(), $id))
             return redirect()->back();
 
-        $colors = null; $soal = null; 
+        $test = $this->testModel->where('id', getTestId())->first();
+        date_default_timezone_set('Asia/Jakarta');
+        $date = date('d-m-Y H:i:s');
+        $time = strtotime($test['end_time']) - strtotime($date);
+        $colors = null; $soal = null;
+
+        $time = 10;
+
+        if ($time <= 0)
+           return redirect()->to(base_url('test/'.pass(getTestId()).'/finish')); 
 
         if (!$no) {
             foreach (getQuestions() as $i=>$st) {
@@ -46,7 +55,6 @@ class Test extends BaseController
         $soal = getQuestions()[$no-1];
 
         $opsi = getQuestionOptions($soal['id']);
-        $test = $this->testModel->where('id', getTestId())->first();
         $jawab = $this->testAnswerModel->where('question_id', $soal['id'])->where('test_id', getTestId())->first();
         
         $answers = getAnswers();
@@ -61,9 +69,6 @@ class Test extends BaseController
                 $colors[$i] = '';
         }
         
-        date_default_timezone_set('Asia/Jakarta');
-        $date = date('d-m-Y H:i:s');
-        $time = abs(strtotime($test['end_time']) - strtotime($date));
         // gmdate("i:s", $time)
         
         $data = [
@@ -86,6 +91,14 @@ class Test extends BaseController
     public function submit($id, $no = false) {
         if (!v_pass(getTestId(), $id))
             return redirect()->back();
+
+        $test = $this->testModel->where('id', getTestId())->first();
+        date_default_timezone_set('Asia/Jakarta');
+        $date = date('d-m-Y H:i:s');
+        $time = strtotime($test['end_time']) - strtotime($date);
+
+        if ($time <= 0)
+            return redirect()->to(base_url('test/' . pass(getTestId()) . '/finish')); 
 
         $soal = null; $is_submit = false;
         try {
@@ -190,5 +203,9 @@ class Test extends BaseController
         ];
         $this->testModel->save($data);
         return redirect()->to(base_url('test/' . pass(getTestId())));
+    }
+
+    public function finish() {
+        return 'Hello World!';
     }
 }
