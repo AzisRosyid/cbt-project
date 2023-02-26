@@ -56,12 +56,6 @@ $routes->get('/admin/siswa', 'Admin::siswa', ['filter' => 'adminAuth']);
 $routes->get('/admin/test', 'Admin::soal', ['filter' => 'adminAuth']);
 $routes->get('/admin/result', 'Admin::hasil', ['filter' => 'adminAuth']);
 
-// $routes->get('/login', 'Auth::index');
-
-// $routes->match(['get', 'post'], 'Auth/register', 'Auth::register');
-// $routes->match(['get', 'post'], 'Auth/login', 'Auth::login');
-// $routes->get('/profile', 'ProfileController::index',['filter' => 'authGuard']);
-
 /*
  * --------------------------------------------------------------------
  * Additional Routing
