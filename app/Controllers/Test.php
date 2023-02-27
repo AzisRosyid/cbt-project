@@ -8,6 +8,7 @@ use App\Models\TestAnswerModel;
 use App\Models\TestModel;
 use App\Models\UserModel;
 use CodeIgniter\I18n\Time;
+use DateTime;
 use Dompdf\Dompdf;
 use Exception;
 
@@ -31,12 +32,9 @@ class Test extends BaseController
             return redirect()->back();
 
         $test = $this->testModel->where('id', getTestId())->first();
-        date_default_timezone_set('Asia/Jakarta');
-        $date = date('d-m-Y H:i:s');
-        $time = strtotime($test['end_time']) - strtotime($date);
+        $date = Time::now('Asia/Jakarta', 'in_ID');
+        $time = strtotime($test['end_time']) - strtotime($date->toDateTimeString());
         $colors = null; $soal = null;
-
-        $time = 2600;
 
         if ($time <= 0)
            return redirect()->to(base_url('test/'.pass(getTestId()).'/finish')); 
@@ -80,7 +78,7 @@ class Test extends BaseController
             'jawab' => $jawab,
             'url' => 'test/'.pass(getTestId()),
             'nama' => session()->get('nama'),
-            'date'  => date('d-m-Y', strtotime($date)),
+            'date'  => date('d-m-Y', strtotime($date->toDateTimeString())),
             'time'  => $time,
         ];
         
@@ -92,9 +90,8 @@ class Test extends BaseController
             return redirect()->back();
 
         $test = $this->testModel->where('id', getTestId())->first();
-        date_default_timezone_set('Asia/Jakarta');
-        $date = date('d-m-Y H:i:s');
-        $time = strtotime($test['end_time']) - strtotime($date);
+        $date = Time::now('Asia/Jakarta', 'in_ID');
+        $time = strtotime($test['end_time']) - strtotime($date->toDateTimeString());
 
         if ($time <= 0)
             return redirect()->to(base_url('test/' . pass(getTestId()) . '/finish')); 
@@ -208,7 +205,7 @@ class Test extends BaseController
         if (!v_pass(getTestId(), $id))
             return redirect()->back();
 
-        $time = Time::now('Asia/Jakarta', 'in_ID');
+        $time = Time::now('Asia/Jakarta', 'in_ID');;
         
         $data = [
             'id'    => getTestId(),
@@ -306,15 +303,13 @@ class Test extends BaseController
             'unanswered' => $unanswered,
             'score'   => $score,
         ];
-
-        dd('Helo');
-
+    
         $filename = date('y-m-d-H-i-s'). '-result-form';
-        $dompdf = new Dompdf(['isRemoteEnabled' => true]); 
+        $dompdf = new Dompdf(); 
         $dompdf->loadHTML(view('test/download', $data));
         $dompdf->setPaper('A4', 'landscape');
         $dompdf->render();
-        $dompdf->stream($filename);
+        $dompdf->stream($filename, array("Attachment" => false));
 
         return redirect()->back();
     }
