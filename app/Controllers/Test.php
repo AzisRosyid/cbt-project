@@ -8,6 +8,7 @@ use App\Models\TestAnswerModel;
 use App\Models\TestModel;
 use App\Models\UserModel;
 use CodeIgniter\I18n\Time;
+use Dompdf\Dompdf;
 use Exception;
 
 class Test extends BaseController
@@ -263,8 +264,58 @@ class Test extends BaseController
             'skipped' => $skipped,
             'unanswered' => $unanswered,
             'score'   => $score,
+            'url' => 'test/'.pass(getTestId()),
         ];
 
         return view('test/result', $data);
+    }
+
+    public function download($id) {
+        foreach ($this->testModel->findAll() as $st) 
+            if (v_pass($st['id'], $id))
+                $id = $st['id'];
+        $test = $this->testModel->where('id', $id)->first();
+        if (!$test)
+            return redirect()->back();
+
+        $correct = 0; $wrong = 0; $skipped = 0; $unanswered = 0; 
+
+        $answers = $this->testAnswerModel->where('test_id', $test['id'])->findAll();
+
+        foreach ($answers as $st) {
+            $option = $this->questionOptionModel->where('id', $st['option_id'])->first();
+            if (!$st['is_submit'])
+                $skipped += 1;
+            elseif ($st['option_id'] == null)
+                $unanswered += 1;
+            elseif ($option['is_correct'])
+                $correct += 1;
+            else 
+                $wrong += 1;
+        }
+
+        $score = $correct / count($answers) * 100;
+        
+        $data = [
+            'section' => 'test',
+            'title'   => 'result',
+            'nama'    => session()->get('nama'),
+            'correct' => $correct,
+            'wrong'   => $wrong,
+            'skipped' => $skipped,
+            'unanswered' => $unanswered,
+            'score'   => $score,
+        ];
+
+        dd('Helo');
+
+        $filename = date('y-m-d-H-i-s'). '-result-form';
+        $dompdf = new Dompdf(['isRemoteEnabled' => true]); 
+        $dompdf->loadHTML(view('test/download', $data));
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+        $dompdf->stream($filename);
+
+        return redirect()->back();
     }
 }

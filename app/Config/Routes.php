@@ -48,6 +48,7 @@ $routes->get('/test/(:segment)/(:num)', 'Test::index/$1/$2', ['filter' => 'testA
 $routes->post('/test/(:segment)/(:num)', 'Test::submit/$1/$2', ['filter' => 'testAuth']);
 $routes->get('/test/(:segment)/finish', 'Test::finish/$1', ['filter' => 'testAuth']);
 $routes->get('/test/(:segment)/result', 'Test::result/$1', ['filter' => 'resultAuth']);
+$routes->get('/test/(:segment)/result/download', 'Test::download/$1', ['filter' => 'resultAuth']);
 
 // Admin
 $routes->get('/admin', 'Admin::index', ['filter' => 'adminAuth']);

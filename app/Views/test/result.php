@@ -75,7 +75,7 @@
         <div class="row mt-3 mb-3 justify-content-center">
           <div class="col-lg-3">
             <div class="tombol text-center">
-               <a href="#" class="btn btn-primary">Download PDF</a>
+               <a href="<?= base_url($url.'/result/download'); ?>" class="btn btn-primary">Download PDF</a>
             </div>
           </div>
         </div>
