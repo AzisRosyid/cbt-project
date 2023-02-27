@@ -4,7 +4,7 @@
 <div class="container">
       <div class="row pt-5">
         <div class="col-lg-6 text-white">
-          <h1>Hai, Nama</h1>
+          <h1>Hai, <?= $nama; ?></h1>
           <p>SELAMAT DATANG DI EMPATITUDE-CBT</p>
         </div>
       </div>
@@ -28,7 +28,7 @@
                 <div class="col-lg-5 justify-content-center ms-5">
                   <div class="row justify-content-center">
                     <div class="col-lg-12 border-bottom">
-                      <p>Score: 30%</p>
+                      <p>Score: <?= $score; ?>%</p>
                     </div>
                   </div>
                   <div class="row justify-content-between">
@@ -39,10 +39,10 @@
                       <p>Skipped</p>
                     </div>
                     <div class="col-lg-6 text-end">
-                      <p>30</p>
-                      <p>10</p>
-                      <p>5</p>
-                      <p>5</p>
+                      <p><?= $correct; ?></p>
+                      <p><?= $wrong; ?></p>
+                      <p><?= $unanswered; ?></p>
+                      <p><?= $skipped; ?></p>
                     </div>
                   </div>
                 
@@ -93,7 +93,7 @@
         ],
         datasets: [{
           label: 'My First Dataset',
-          data: [30, 10, 5, 5],
+          data: [<?= $correct; ?>, <?= $wrong; ?>, <?= $skipped; ?>, <?= $unanswered; ?>],
           backgroundColor: [
             'green',
             'red',

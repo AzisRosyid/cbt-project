@@ -77,7 +77,7 @@
               <p class="card-text" align="center">Apakah kamu yakin untuk menyimpan <br>
                 jawaban dan mengakhiri penilaian dalam <br>
                 Emaptitude-CBT ?</p>
-              <a href="#" class="btn btn-primary">Ya</a>
+              <a href="<?= base_url($url.'/finish'); ?>" class="btn btn-primary">Ya</a>
               <a href="#" class="btn btn-primary tidak">Tidak</a>
             </div>
           </div>
