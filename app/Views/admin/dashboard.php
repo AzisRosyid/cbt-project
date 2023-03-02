@@ -19,7 +19,7 @@
                   </div>
                   <h5 class="card-title">Jumlah Siswa</h5>
                   <div class="display-4 fw-bold"><?= $siswa; ?></div>
-                  <a href="siswa.html" class=" text-white"><p class="card-text">Lihat Detail</p></a>
+                  <a href="<?= base_url('admin/siswa'); ?>" class=" text-white"><p class="card-text">Lihat Detail</p></a>
                 </div>
               </div>
 
@@ -30,7 +30,7 @@
                   </div>
                   <h5 class="card-title">Jumlah Soal</h5>
                   <div class="display-4 fw-bold"><?= $soal; ?></div>
-                  <a href="soal.html" class=" text-white"><p class="card-text">Lihat Detail</p></a>
+                  <a href="<?= base_url('admin/soal'); ?>" class=" text-white"><p class="card-text">Lihat Detail</p></a>
                 </div>
               </div>
 
@@ -41,7 +41,7 @@
                   </div>
                   <h5 class="card-title">Jumlah Hasil</h5>
                   <div class="display-4 fw-bold"><?= $hasil; ?></div>
-                  <a href="hasil.html" class=" text-white"><p class="card-text">Lihat Detail</p></a>
+                  <a href="<?= base_url('admin/hasil'); ?>" class=" text-white"><p class="card-text">Lihat Detail</p></a>
                 </div>
               </div>
             </div>

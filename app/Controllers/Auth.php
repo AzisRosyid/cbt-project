@@ -61,7 +61,7 @@ class Auth extends BaseController
                 ];
                 $session->set($ses_data);
                 if ($ses_data['level'] == 'Admin')
-                    return redirect()->to(base_url('/test/admin'));
+                    return redirect()->to(base_url('/admin'));
                 return redirect()->to(base_url('/test/introduction'));
             } else {
                 $session->setFlashdata('msg', 'Password is incorrect.');

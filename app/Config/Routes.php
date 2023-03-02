@@ -54,8 +54,8 @@ $routes->get('/test/(:segment)/result/download', 'Test::download/$1', ['filter' 
 $routes->get('/admin', 'Admin::index', ['filter' => 'adminAuth']);
 $routes->get('/admin/dashboard', 'Admin::dashboard', ['filter' => 'adminAuth']);
 $routes->get('/admin/siswa', 'Admin::siswa', ['filter' => 'adminAuth']);
-$routes->get('/admin/test', 'Admin::soal', ['filter' => 'adminAuth']);
-$routes->get('/admin/result', 'Admin::hasil', ['filter' => 'adminAuth']);
+$routes->get('/admin/soal', 'Admin::soal', ['filter' => 'adminAuth']);
+$routes->get('/admin/hasil', 'Admin::hasil', ['filter' => 'adminAuth']);
 
 /*
  * --------------------------------------------------------------------

@@ -4,7 +4,7 @@
 <!-- badan -->
 <div class="row g-0 pt-5 badan">
 
-<?= $this->include('admin/bar'); ?>
+    <?= $this->include('admin/bar'); ?>
     <!-- content -->
     <div class="col-md-10 p-5">
         <h3><i class="bi bi-file-earmark-bar-graph me"></i> Soal Test</h3>
@@ -27,18 +27,21 @@
         new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['soal 1', 'soal 2', 'soal 3', 'soal 4', 'soal 5', 'soal 6'],
+                labels: <?= $label; ?>,
                 datasets: [{
                     label: 'Jumlah Benar',
-                    data: [10, 12, 9, 12, 10, 13],
+                    data: <?= $benar; ?>,
                     borderWidth: 1
                 }]
             },
             options: {
                 scales: {
                     y: {
-                        beginAtZero: true
-                    }
+                        beginAtZero: true,
+                        // ticks: {
+                        //     stepSize: 1
+                        // }
+                    },
                 }
             }
         });

@@ -10,11 +10,11 @@
             <hr class="text-black">
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('admin/test'); ?>"><i class="bi bi-file-earmark-bar-graph me-2"></i> Soal Test</a>
+            <a class="nav-link" href="<?= base_url('admin/soal'); ?>"><i class="bi bi-file-earmark-bar-graph me-2"></i> Soal Test</a>
             <hr class="text-black">
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('admin/result'); ?>"><i class="bi bi-file-earmark-fill me-2"></i> Hasil Test</a>
+            <a class="nav-link" href="<?= base_url('admin/hasil'); ?>"><i class="bi bi-file-earmark-fill me-2"></i> Hasil Test</a>
             <hr class="text-black">
         </li>
     </ul>
