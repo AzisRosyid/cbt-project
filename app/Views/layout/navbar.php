@@ -21,7 +21,7 @@
       <a class="navbar-brand h1" href="#">ADMIN</a>
       <form class="d-flex ml-auto" role="search" <?php if ($title == 'siswa') : ?> action="<?= base_url('admin/siswa'); ?>" <?php elseif ($title == 'hasil') : ?> action="<?= base_url('admin/hasil') ?>" <?php endif; ?>>
         <?php if ($title == 'siswa' || $title == 'hasil') : ?>
-          <input class="form-control me-2" type="search" placeholder="Search" name="search" aria-label="Search">
+          <input class="form-control me-2" type="search" placeholder="Search" name="search" value="<?= isset($search) ? $search : ''; ?>" aria-label="Search">
           <button class="btn btn-outline-success bg-success text-light cari" type="submit">Search</button>
         <?php endif; ?>
         <a href="<?= base_url('logout'); ?>" class="icolog">

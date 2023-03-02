@@ -11,7 +11,9 @@
         <h3><i class="bi bi-file-earmark-fill filesiswa"></i> Hasil Test</h3><hr>
         <div class="row mb-2">
           <div class="col-12 text-end">
-            <button type="button" class="btn btn-danger px-2 py-1"><i class="bi bi-filetype-pdf me-2"></i>Unduh</button>
+            <form action="<?= $url; ?>" method="post">
+            <button type="submit" class="btn btn-danger px-2 py-1"><i class="bi bi-filetype-pdf me-2"></i>Unduh</button>
+            </form>
           </div>
         </div>
 

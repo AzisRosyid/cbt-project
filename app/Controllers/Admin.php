@@ -7,6 +7,7 @@ use App\Models\QuestionOptionModel;
 use App\Models\TestAnswerModel;
 use App\Models\TestModel;
 use App\Models\UserModel;
+use CodeIgniter\I18n\Time;
 use Config\Database;
 
 class Admin extends BaseController
@@ -50,7 +51,8 @@ class Admin extends BaseController
         $data = [
             'section' => 'admin',
             'title' => 'siswa',
-            'siswa' => $siswa
+            'siswa' => $siswa,
+            'search' => $search,
         ];
 
         return view('admin/siswa', $data);
@@ -86,10 +88,11 @@ class Admin extends BaseController
     public function hasil() {
         $hasil = []; $label = ['No.', 'Nama'];
         $search = $this->request->getVar('search') ? $this->request->getVar('search') : '';
+        $url = current_url().'?'.$_SERVER['QUERY_STRING']; 
 
         $db = Database::connect();
-        $query = $db->query("SELECT * FROM tests as ts JOIN users as us ON ts.user_id = us.id WHERE us.nama LIKE '%".$search."%'");
-
+        $query = $db->query("SELECT ts.id, ts.user_id FROM tests as ts JOIN users as us ON ts.user_id = us.id WHERE us.nama LIKE '%".$search."%' LIMIT 200");
+        
         foreach ($query->getResultArray() as $i=>$st) {
             $test = [$this->userModel->where('id', $st['user_id'])->first()['nama']];
             foreach ($this->testAnswerModel->where('test_id', $st['id'])->findAll() as $id=>$s) {
@@ -107,9 +110,48 @@ class Admin extends BaseController
             'section' => 'admin',
             'title' => 'hasil',
             'label' => $label,
-            'hasil' => $hasil
+            'hasil' => $hasil,
+            'url' => $url,
+            'search' => $search,
         ];
 
         return view('admin/hasil', $data);
+    }
+
+    public function hasilCsv() {
+        $hasil = []; $label = ['No.', 'Nama'];
+        $search = $this->request->getVar('search') ? $this->request->getVar('search') : '';
+
+        $db = Database::connect();
+        $query = $db->query("SELECT ts.id, ts.user_id FROM tests as ts JOIN users as us ON ts.user_id = us.id WHERE us.nama LIKE '%".$search."%' LIMIT 200");
+        if (!$query->getResultArray())
+            return redirect()->back();
+        
+        foreach ($query->getResultArray() as $i=>$st) {
+            $test = [$i+1, $this->userModel->where('id', $st['user_id'])->first()['nama']];
+            foreach ($this->testAnswerModel->where('test_id', $st['id'])->findAll() as $id=>$s) {
+                $label[$id+2] = 'soal '.($id+1).'';
+                if ($s['option_id']) {
+                    $opsi = $this->questionOptionModel->where('id', $s['option_id'])->first();
+                    $test[$id+2] = $opsi['is_correct'].ucwords($opsi['option']);
+                } else
+                    $test[$id+2] = '0-';
+            }
+            $hasil[$i] = $test;
+        }
+
+        $filename = 'hasil_'.date('y-m-d-H-i-s').'.csv';
+        header("Content-Description: File Transfer"); 
+        header("Content-Disposition: attachment; filename=$filename"); 
+        header("Content-Type: application/csv; ");
+        $file = fopen('php://output', 'w');
+        fputcsv($file, $label);
+        foreach ($hasil as $line){ 
+            fputcsv($file,$line); 
+        }
+        fclose($file);
+        exit;
+
+        return redirect()->back();
     }
 }

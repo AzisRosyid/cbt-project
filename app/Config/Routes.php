@@ -56,6 +56,7 @@ $routes->get('/admin/dashboard', 'Admin::dashboard', ['filter' => 'adminAuth']);
 $routes->get('/admin/siswa', 'Admin::siswa', ['filter' => 'adminAuth']);
 $routes->get('/admin/soal', 'Admin::soal', ['filter' => 'adminAuth']);
 $routes->get('/admin/hasil', 'Admin::hasil', ['filter' => 'adminAuth']);
+$routes->post('/admin/hasil', 'Admin::hasilCsv', ['filter' => 'adminAuth']);
 
 /*
  * --------------------------------------------------------------------
