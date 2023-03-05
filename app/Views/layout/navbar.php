@@ -15,7 +15,6 @@
     </div>
   </nav>
 <?php elseif ($section == 'admin') : ?>
-  <!-- navbar -->
   <nav class="navbar navbar-expand-lg bg-primary position-fixed navbar-dark">
     <div class="container-fluid">
       <a class="navbar-brand h1" href="#">ADMIN</a>
@@ -31,5 +30,4 @@
     </div>
     </div>
   </nav>
-  <!-- akhir navbar -->
 <?php endif; ?>

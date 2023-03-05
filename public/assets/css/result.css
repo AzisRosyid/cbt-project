@@ -17,3 +17,12 @@
 	color: #133055;
 	font-weight: bold;
 }
+
+.phasil {
+	transform: scale(0);
+	position: absolute;
+}
+
+.res {
+	height: 100%;
+}

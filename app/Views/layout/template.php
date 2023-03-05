@@ -33,7 +33,7 @@
     <?php endif; ?>
 </head>
 
-<body id="home" class="bgbody">
+<body id="home" class="bgb bgbody res">
     <!-- Navbar -->
     <?= $this->include('layout/navbar'); ?>
 
